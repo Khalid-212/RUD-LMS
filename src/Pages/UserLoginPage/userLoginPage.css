@@ -1,0 +1,59 @@
+.form {
+  display: grid;
+  place-items: center;
+}
+.form > form {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius: 10px;
+  width: 27rem;
+  height: 27rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.form > form > h1 {
+  color: #1e9fe9;
+  margin-bottom: 2rem;
+}
+.UsernameInput,
+.PasswordInput {
+  border-radius: 10px;
+  border: transparent;
+  padding: 0.5rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  width: 70%;
+  height: 2rem;
+  justify-content: space-around;
+}
+.test {
+  padding: 0.5rem;
+  width: 70%;
+  height: 2rem;
+}
+.test:focus {
+  outline: none;
+}
+
+.PasswordInput {
+  margin: 2rem 1rem;
+}
+.UsernameInput:focus {
+  outline: none;
+}
+.UsernameInput:focus::placeholder {
+  color: transparent;
+}
+
+.SubmitButton {
+  width: 40%;
+  height: max-content;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border: transparent;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  cursor: pointer;
+}

@@ -1,0 +1,36 @@
+.courseCard {
+  /* border: 1px solid #1e9fe9; */
+  width: 17rem;
+  height: 17rem;
+  /* margin: 3rem; */
+  display: grid;
+  place-items: center;
+}
+.courseCard > progress {
+  width: 100%;
+  height: 20px;
+}
+.courseCard > h1 {
+  font-size: 3rem;
+}
+
+.blue {
+  border: 1px solid;
+  accent-color: #1e9fe9;
+  color: #1e9fe9;
+}
+.orange {
+  accent-color: orange;
+  color: orange;
+  border: 1px solid orange;
+}
+.purple {
+  color: purple;
+  accent-color: purple;
+  border: 1px solid purple;
+}
+.green {
+  color: green;
+  accent-color: green;
+  border: 1px solid green;
+}

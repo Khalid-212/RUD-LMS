@@ -1,0 +1,41 @@
+.CourseBanner {
+  color: #1e9fe9;
+  display: flex;
+  padding: 2rem;
+  /* background-color: rgb(239, 241, 241); */
+  border: 1px solid rgb(202, 202, 202);
+}
+.BannerLeft {
+  flex: 3;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+.title {
+  padding: 2rem;
+  border: 1px solid #1e9fe9;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e9fe9;
+}
+
+.BannerRight {
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+.progress {
+  color: #1e9fe9;
+  display: flex;
+  margin-top: 6rem;
+  /* border: 1px solid black; */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.progress > progress {
+  width: 80%;
+  height: 30px;
+  accent-color: #1e9fe9;
+}
