@@ -5,7 +5,7 @@ import userIcon from "../../Assets/user.svg";
 import "./Header.css";
 import logouticon from "../../Assets/logout.svg";
 
-function Header({ username }) {
+function HeaderAdmin({ username }) {
   const onclick = () => {
     localStorage.clear();
     window.location.reload();
@@ -37,4 +37,4 @@ function Header({ username }) {
   );
 }
 
-export default Header;
+export default HeaderAdmin;

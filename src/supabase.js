@@ -49,9 +49,9 @@ export async function getAdminByCredentials(username, password) {
 }
 
 export async function addStudent(student) {
-  const { data, error } = await supabase.from("Students").insert(student);
+  const { data, error } = await supabase.from("Student").insert(student);
   errorGuard(error);
-  return data[0];
+  return data;
 }
 
 export async function getCourses() {

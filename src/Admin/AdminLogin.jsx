@@ -5,23 +5,17 @@ import { getAdminByCredentials } from "../supabase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { adminstat, selectadmin } from "../adminSlice";
-// import { getAdmin } from "../supabase";
+import "./AdminLogin.css";
 
 function AdminLogin() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const [setuserdetail] = useState(null);
   const [currentusername, setcurrentusername] = useState("");
-  // const [loginstate, setloginstate] = useState(false);
   const { register, handleSubmit } = useForm();
-  // const [errorborder, seterrorborder] = useState("");
   const onSubmit = async (data) => {
     const adminlogn = await getAdminByCredentials(data.username, data.password);
-    // console.log(adminlogn.username);
     try {
       if (adminlogn) {
-        // setloginstate(true);
-        // setuserdetail(adminlogn);
         setcurrentusername(adminlogn.userName);
         dispatch(
           adminstat({
@@ -30,21 +24,20 @@ function AdminLogin() {
             lastName: adminlogn.lastname,
           })
         );
-        navigate("/admin/adminhome");
+        navigate("/admin/home");
       } else {
         alert("invalid credentials");
       }
     } catch (error) {
       console.log(error);
-      // seterrorborder("1px solid red");
     }
   };
   if (useSelector(selectadmin)) {
-    navigate("/adminhome");
+    navigate("/admin/home");
   }
   return (
     <div>
-      <Header />
+      <Header username={currentusername === null ? "" : currentusername} />
       <div className="form">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1>Login</h1>

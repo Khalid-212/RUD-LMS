@@ -21,8 +21,6 @@ function UserLogin() {
     const logn = await getStudentByCredentials(data.username, data.password);
     try {
       if (logn) {
-        // setloginstate(true);
-        // setuserdetail(logn);
         setcurrentusername(logn.userName);
         dispatch(
           login({

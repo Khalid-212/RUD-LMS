@@ -1,0 +1,22 @@
+.tabsWrapper {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  border-bottom: 1px solid #1e9fe9;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.tabs {
+  padding: 0.1rem 1rem;
+  margin-top: 2rem;
+}
+.tabs > p {
+  color: #62afdc;
+}
+.tabs :hover {
+  color: #1e9fe9;
+  font-weight: 600;
+  animation: ease-in-out;
+  animation-duration: 100ms;
+}

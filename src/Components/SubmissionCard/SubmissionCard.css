@@ -1,0 +1,10 @@
+.submissioncard {
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid #1e9fe9;
+  margin: 2rem;
+}
+.submissioncard:hover {
+  box-shadow: 0px 2px 5px #c8c9c9;
+  cursor: pointer;
+}

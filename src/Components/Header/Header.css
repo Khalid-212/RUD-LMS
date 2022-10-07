@@ -49,3 +49,15 @@
   height: 30px;
   align-items: baseline;
 } */
+.signout {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  color: #1e9fe9;
+}
+.signout > img {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  margin: 0 2rem;
+}

@@ -13,5 +13,5 @@ export const adminSlice = createSlice({
 });
 
 export const { adminstat } = adminSlice.actions;
-export const selectadmin = (state) => state.user.user;
+export const selectadmin = (state) => state.adminstat.adminstat;
 export default adminSlice.reducer;
