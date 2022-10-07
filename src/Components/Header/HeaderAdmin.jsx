@@ -13,7 +13,7 @@ function HeaderAdmin({ username }) {
   return (
     <div className="header">
       <div className="left">
-        <Link to="/home" style={{ textDecoration: "none" }}>
+        <Link to="/admin" style={{ textDecoration: "none" }}>
           <div className="logo">
             <h1>R</h1>
             <h2>uwad</h2>

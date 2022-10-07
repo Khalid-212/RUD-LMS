@@ -1,9 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "./ManageStudents.css";
-import HeaderAdmin from "../../Components/Header/HeaderAdmin";
-import Tabs from "../../Components/Tabs/Tabs";
-import { addStudent } from "../../supabase";
+import HeaderAdmin from "../../../Components/Header/HeaderAdmin";
+import Tabs from "../../../Components/Tabs/Tabs";
+import { addStudent } from "../../../supabase";
 
 function ManageStudents() {
   const { register, handleSubmit } = useForm();

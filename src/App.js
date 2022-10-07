@@ -5,7 +5,7 @@ import AdminHome from "./Admin/AdminHome";
 import AdminLogin from "./Admin/AdminLogin";
 import ManageCourses from "./Admin/Manage/ManageCourses/ManageCourses";
 import ManagePage from "./Admin/Manage/ManagePage";
-import ManageStudents from "./Admin/Manage/ManageStudents";
+import ManageStudents from "./Admin/Manage/ManageStudents/ManageStudents";
 import StudentList from "./Admin/StudentList";
 import { selectadmin } from "./adminSlice";
 import "./App.css";
