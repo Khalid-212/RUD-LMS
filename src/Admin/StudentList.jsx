@@ -10,7 +10,6 @@ function StudentList() {
   const [studentList, setStudentList] = React.useState([]);
   const students = async () => {
     const students = await getStudentlist();
-    // console.log(students);
     setStudentList(students);
   };
 
@@ -30,8 +29,9 @@ function StudentList() {
         <div className="studentscards">
           {studentList.map((student) => (
             <UserCard
-              key={student.id.toString()}
               studentName={student.firstName + " " + student.lastName}
+              key={student.id.toString()}
+              val={student.id}
             />
           ))}
         </div>

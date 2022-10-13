@@ -9,9 +9,12 @@ export const adminSlice = createSlice({
     adminstat: (state, action) => {
       state.adminstat = action.payload;
     },
+    studenttoreview: (state, action) => {
+      state.studenttoreview = action.payload;
+    },
   },
 });
 
-export const { adminstat } = adminSlice.actions;
+export const { adminstat, studenttoreview } = adminSlice.actions;
 export const selectadmin = (state) => state.adminstat.adminstat;
 export default adminSlice.reducer;

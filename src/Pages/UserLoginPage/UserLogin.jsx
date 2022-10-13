@@ -11,9 +11,7 @@ import { useState } from "react";
 function UserLogin() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const [setuserdetail] = useState(null);
   const [currentusername, setcurrentusername] = useState("");
-  // const [loginstate, setloginstate] = useState(false);
   const { register, handleSubmit } = useForm();
   const [errorborder, seterrorborder] = useState("");
 
@@ -27,6 +25,7 @@ function UserLogin() {
             username: logn.userName,
             firstname: logn.firstName,
             lastName: logn.lastName,
+            id: logn.id,
           })
         );
         navigate("/home");

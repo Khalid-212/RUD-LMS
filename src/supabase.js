@@ -23,6 +23,15 @@ export async function getStudent(id) {
     .select("*")
     .eq("id", id);
   errorGuard(error);
+  return data;
+}
+// get student by id
+export async function getStudentById(id) {
+  const { data, error } = await supabase
+    .from("Student")
+    .select("*")
+    .eq("id", id);
+  errorGuard(error);
   return data[0];
 }
 
@@ -65,7 +74,7 @@ export async function getCourse(id) {
     .select("*")
     .eq("id", id);
   errorGuard(error);
-  return data[0];
+  return data;
 }
 // create a function to add a new Course to the database
 export async function addCourse(course) {
@@ -89,14 +98,15 @@ export async function assignCourseToStudent(courseId, studentId) {
   return data[0];
 }
 
-export async function getCourseForStudent(studentId) {
+export async function getCourseForStudent(StudentId) {
   const { data, error } = await supabase
     .from("CourseToStudent")
-    .select(`Course: courseId (name, code)`)
-    .eq("studentId", studentId);
+    .select("*")
+    .eq("StudentId", StudentId);
   errorGuard(error);
   return data;
 }
+// get students from course
 
 export async function getAdmin() {
   const { data, error } = await supabase.from("Admin").select("*");

@@ -8,7 +8,7 @@ import { addStudent } from "../../../supabase";
 function ManageStudents() {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
-    const AddStudent = await addStudent({
+    await addStudent({
       firstName: data.firstname,
       lastName: data.lastname,
       password: data.password,

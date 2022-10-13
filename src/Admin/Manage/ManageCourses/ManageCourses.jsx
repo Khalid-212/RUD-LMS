@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./ManageCourses.css";
 import "./ManageCourses.css";
 import HeaderAdmin from "../../../Components/Header/HeaderAdmin";
 import Tabs from "../../../Components/Tabs/Tabs";
 import { useForm } from "react-hook-form";
-import { Form } from "react-router-dom";
 import { getStudentlist } from "../../../supabase";
-import CheckBox from "../../../Components/CheckBox/CheckBox";
 
 function ManageCourses() {
   const { register, handleSubmit } = useForm();
   const [studentList, setStudentList] = React.useState([]);
-  const [selectedStudents, setselectedStudents] = useState([]);
   const students = async () => {
     const students = await getStudentlist();
     setStudentList(students);

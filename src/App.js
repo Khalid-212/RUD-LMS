@@ -3,12 +3,14 @@ import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import AdminHome from "./Admin/AdminHome";
 import AdminLogin from "./Admin/AdminLogin";
+import EvaluationPage from "./Admin/EvaluationPage/EvaluationPage";
 import ManageCourses from "./Admin/Manage/ManageCourses/ManageCourses";
 import ManagePage from "./Admin/Manage/ManagePage";
 import ManageStudents from "./Admin/Manage/ManageStudents/ManageStudents";
 import StudentList from "./Admin/StudentList";
 import { selectadmin } from "./adminSlice";
 import "./App.css";
+import CoursePage from "./Pages/CoursePages/CoursePage";
 import HadisPage from "./Pages/CoursePages/HadisPage/HadisPage";
 import QuranPage from "./Pages/CoursePages/QuranPage/QuranPage";
 import SiraPage from "./Pages/CoursePages/SiraPage/SiraPage";
@@ -29,6 +31,11 @@ function App() {
           exact
           path="/sirapage"
           element={user ? <SiraPage /> : <UserLogin />}
+        />
+        <Route
+          exact
+          path="/cors"
+          element={user ? <CoursePage /> : <UserLogin />}
         />
         <Route
           exact
@@ -69,6 +76,11 @@ function App() {
           exact
           path="/admin/manage/managecourses"
           element={admnisloggedin ? <ManageCourses /> : <AdminLogin />}
+        />
+        <Route
+          exact
+          path="/admin/manage/evaluation"
+          element={admnisloggedin ? <EvaluationPage /> : <AdminLogin />}
         />
       </Routes>
     </div>

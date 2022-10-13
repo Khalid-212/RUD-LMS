@@ -4,12 +4,14 @@ import notification from "../../Assets/notification.svg";
 import userIcon from "../../Assets/user.svg";
 import "./Header.css";
 import logouticon from "../../Assets/logout.svg";
+import { useSelector } from "react-redux";
 
 function Header({ username }) {
   const onclick = () => {
     localStorage.clear();
     window.location.reload();
   };
+  const user = useSelector((state) => state.user).user;
   return (
     <div className="header">
       <div className="left">
@@ -29,9 +31,13 @@ function Header({ username }) {
           <img src={userIcon} alt="" />
           <span>{username}</span>
         </div>
-        <p className="signout" onClick={onclick}>
-          <img src={logouticon} alt="" />
-        </p>
+        {user ? (
+          <p className="signout" onClick={onclick}>
+            <img src={logouticon} alt="" />
+          </p>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

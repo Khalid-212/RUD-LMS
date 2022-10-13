@@ -1,0 +1,34 @@
+.assignmentStatusCard {
+  display: flex;
+  border: 1px solid #1e9fe9;
+  gap: 1rem;
+  width: 60vw;
+  margin: auto;
+  padding: 1rem;
+  color: #1e9fe9;
+  justify-content: space-between;
+}
+.assignmentNumber {
+  font-size: 20px;
+  padding: 0.5rem 4rem;
+}
+.assignmentDate {
+  font-size: 20px;
+  padding: 0.5rem 4rem;
+}
+.statusbannerPending {
+  font-size: 20px;
+  padding: 0.5rem 4rem;
+  background-color: #fff7ac;
+  color: #ffdd00;
+  border-radius: 15px;
+  width: 3rem;
+}
+.statusbannerDone {
+  width: 3rem;
+  font-size: 20px;
+  padding: 0.5rem 4rem;
+  background-color: #acffb5;
+  color: #22ff00;
+  border-radius: 15px;
+}
