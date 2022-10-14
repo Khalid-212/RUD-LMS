@@ -12,23 +12,25 @@ function CoursePage() {
   const courseId = JSON.parse(
     JSON.stringify(useSelector((state) => state.course).usercourse.id)
   );
-  const getcourse = async () => {
-    setCourse(
-      await getCourseForStudent("d9f13901-7b56-4117-950e-4d3e9c393538")
-    );
+  console.log(courseId);
+  const currentCourse = async () => {
+    setCourse(await getCourse(courseId));
   };
   useEffect(() => {
-    getcourse();
-    console.log(course);
-  }, []);
+    if (!course) {
+      currentCourse();
+    }
+    // currentCourse();
+  }, [course]);
+  console.log(course ? course : "no course");
 
   return (
     <div>
       <Header username={username} />
       <CourseBanner
-        courseprogress="77"
-        courseModule="40 Hadis"
-        courseName="Hadis"
+        courseprogress={course && course[0].name}
+        courseModule={course && course[0].courseModule}
+        courseName={course && course[0].name}
       />
     </div>
   );

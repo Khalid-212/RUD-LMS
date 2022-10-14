@@ -27,21 +27,21 @@ function App() {
         <Route exact path="/" element={user ? <Home /> : <UserLogin />} />
         <Route exact path="/home" element={user ? <Home /> : <UserLogin />} />
         <Route exact path="/userlogin" element={<UserLogin />} />
-        <Route
+        {/* <Route
           exact
           path="/sirapage"
           element={user ? <SiraPage /> : <UserLogin />}
-        />
+        /> */}
         <Route
           exact
-          path="/cors"
+          path="/coursepage"
           element={user ? <CoursePage /> : <UserLogin />}
         />
-        <Route
+        {/* <Route
           exact
           path="/hadispage"
           element={user ? <HadisPage /> : <UserLogin />}
-        />
+        /> */}
         <Route
           exact
           path="/quranpage"
