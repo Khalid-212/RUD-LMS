@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { adminstat, selectadmin } from "../adminSlice";
 import "./AdminLogin.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function AdminLogin() {
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ function AdminLogin() {
         );
         navigate("/admin/home");
       } else {
-        alert("invalid credentials");
+        toast.error("wrong credentials");
       }
     } catch (error) {
       console.log(error);
@@ -39,6 +41,15 @@ function AdminLogin() {
     <div>
       <Header username={currentusername === null ? "" : currentusername} />
       <div className="form">
+        <ToastContainer
+          position="top-center"
+          autoClose={500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          theme="colored"
+        />
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1>Login</h1>
           <input

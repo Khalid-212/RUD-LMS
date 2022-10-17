@@ -11,12 +11,13 @@ import StudentList from "./Admin/StudentList";
 import { selectadmin } from "./adminSlice";
 import "./App.css";
 import CoursePage from "./Pages/CoursePages/CoursePage";
-import HadisPage from "./Pages/CoursePages/HadisPage/HadisPage";
-import QuranPage from "./Pages/CoursePages/QuranPage/QuranPage";
-import SiraPage from "./Pages/CoursePages/SiraPage/SiraPage";
+import FormPage from "./Pages/FormPage/FormPage";
 import Home from "./Pages/HomePage/Home";
 import UserLogin from "./Pages/UserLoginPage/UserLogin";
 import { selectUser } from "./userSlice";
+// import HadisPage from "./Pages/CoursePages/HadisPage/HadisPage";
+// import QuranPage from "./Pages/CoursePages/QuranPage/QuranPage";
+// import SiraPage from "./Pages/CoursePages/SiraPage/SiraPage";
 
 function App() {
   const user = useSelector(selectUser);
@@ -37,16 +38,21 @@ function App() {
           path="/coursepage"
           element={user ? <CoursePage /> : <UserLogin />}
         />
+        <Route
+          exact
+          path="/form"
+          element={user ? <FormPage /> : <UserLogin />}
+        />
         {/* <Route
           exact
           path="/hadispage"
           element={user ? <HadisPage /> : <UserLogin />}
         /> */}
-        <Route
+        {/* <Route
           exact
           path="/quranpage"
           element={user ? <QuranPage /> : <UserLogin />}
-        />
+        /> */}
         <Route
           exact
           path="/admin"

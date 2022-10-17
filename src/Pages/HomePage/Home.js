@@ -6,46 +6,27 @@ import Header from "../../Components/Header/Header";
 import "./Home.css";
 import { getCourse, getCourseForStudent } from "../../supabase";
 import { usercourse } from "../../courseSlice";
-import { ClipLoader, SyncLoader } from "react-spinners";
+import { SyncLoader } from "react-spinners";
 
 function Home() {
   const username = JSON.parse(
     JSON.stringify(useSelector((state) => state.user).user.username)
   );
-  const [course, setCourse] = useState([]);
-  const [allCourses, setallCourses] = useState(false);
-  // const [studentcourseId, setStudentCourseId] = useState();
+  const [courses, setCourses] = useState(false);
   const dispatch = useDispatch();
   const uid = JSON.parse(
     JSON.stringify(useSelector((state) => state.user).user.id)
   );
   const getstudentcourselist = async () => {
-    setCourse(await getCourseForStudent(uid));
-  };
-  const studentCourseList = async () => {
-    const getAllCourses = await Promise.all(
-      course.map(async (c) => {
-        return await getCourse(c.CourseId);
+    const courseRelations = await getCourseForStudent(uid);
+    const courses = await Promise.all(
+      courseRelations.map(async (relation) => {
+        const data = await getCourse(relation.CourseId);
+        return { relation, course: data[0] };
       })
-    ).then((e) => e.map((l) => l[0]));
-    // console.log({ getAllCourses });
-    setallCourses(getAllCourses);
+    );
+    setCourses(courses);
   };
-  useEffect(() => {
-    if (course.length) {
-      studentCourseList();
-      // console.log(course.courseProgress);
-    }
-  }, [course]);
-  const [progress, setProgress] = useState([]);
-  useEffect(() => {
-    if (allCourses) {
-      course.map((c) => {
-        progress.push(c.courseProgress);
-      });
-    }
-    console.log(progress);
-  }, [allCourses]);
 
   useEffect(() => {
     getstudentcourselist();
@@ -63,26 +44,33 @@ function Home() {
     <div>
       <Header username={username ? username : ""} />
       <div className="courseList">
-        {allCourses ? (
-          allCourses.map((item) => (
+        {courses ? (
+          courses.map((course) => (
             <Link
-              onClick={() => selectedCourse(item.id, item.progress)}
+              onClick={() =>
+                selectedCourse(
+                  course.relation.CourseId,
+                  course.relation.courseProgress
+                )
+              }
               to={"/coursepage"}
-              // to={`/${item.name}page`}
               style={{ textDecoration: "none" }}
-              key={item.id}
+              key={course.relation.CourseId}
             >
               <CourseCard
                 styling="courseCard"
                 color="blue"
-                title={item.name}
-                progress={progress[1]}
+                title={course.course.name}
+                progress={course.relation.courseProgress}
               />
             </Link>
           ))
         ) : (
           <SyncLoader color="#1e9fe9" />
         )}
+        <Link to="/form" className="formlink">
+          Rewatib Form
+        </Link>
       </div>
     </div>
   );

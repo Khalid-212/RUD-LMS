@@ -119,3 +119,20 @@ export async function addAdmin(admin) {
   errorGuard(error);
   return data[0];
 }
+
+// creat add rebaniya
+export async function submitRebaniyaform(rebaniya) {
+  const { data, error } = await supabase.from("RebaiyaForm").insert(rebaniya);
+  // const { data, error } = await supabase.from("Course").insert(course);
+  errorGuard(error);
+  return data;
+}
+
+// creat add session
+export async function addSession(studentId) {
+  const { data, error } = await supabase
+    .from("studentSession")
+    .insert(studentId);
+  errorGuard(error);
+  return data;
+}

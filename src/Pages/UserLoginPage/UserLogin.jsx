@@ -5,8 +5,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../Components/Header/Header";
 import { login, selectUser } from "../../userSlice";
 import "./userLoginPage.css";
-import { getStudentByCredentials } from "../../supabase";
+import { addSession, getStudentByCredentials } from "../../supabase";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function UserLogin() {
   const navigate = useNavigate();
@@ -28,17 +30,21 @@ function UserLogin() {
             id: logn.id,
           })
         );
+        // console.log(await addSession(logn.id));
+        console.log(logn.id);
         navigate("/home");
       } else {
-        alert("invalid credentials");
+        toast.error("wrong credentials");
       }
     } catch (error) {
       console.log(error);
       seterrorborder("1px solid red");
     }
+    await addSession({ studentId: logn.id });
   };
   if (useSelector(selectUser)) {
     navigate("/userlogin");
+    // createsession();
   }
 
   return (
@@ -46,7 +52,16 @@ function UserLogin() {
       <Header
         username={useLocation().pathname === "/home" ? currentusername : ""}
       />
-
+      <ToastContainer
+        position="top-center"
+        autoClose={500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        theme="colored"
+      />
+      s
       <div className="form">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1>Login</h1>
@@ -60,6 +75,7 @@ function UserLogin() {
           />
           <input
             required
+            style={{ border: errorborder }}
             className="PasswordInput"
             type="password"
             placeholder="password"

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
 import CourseBanner from "../../Components/CourseBanner/CourseBanner";
 import Header from "../../Components/Header/Header";
-import { getCourse, getCourseForStudent } from "../../supabase";
+import { getCourse } from "../../supabase";
+import "./CoursePage.css";
 
 function CoursePage() {
   const [course, setCourse] = useState(false);
@@ -11,6 +13,9 @@ function CoursePage() {
   );
   const courseId = JSON.parse(
     JSON.stringify(useSelector((state) => state.course).usercourse.id)
+  );
+  const courseprogress = JSON.parse(
+    JSON.stringify(useSelector((state) => state.course).usercourse.progress)
   );
   console.log(courseId);
   const currentCourse = async () => {
@@ -28,10 +33,21 @@ function CoursePage() {
     <div>
       <Header username={username} />
       <CourseBanner
-        courseprogress={course && course[0].name}
+        courseprogress={course && courseprogress}
         courseModule={course && course[0].courseModule}
         courseName={course && course[0].name}
       />
+      <div className="assignments">
+        <AssignmentCard />
+        <AssignmentCard />
+        <AssignmentCard />
+        <AssignmentCard />
+        <AssignmentCard />
+        <AssignmentCard />
+        <AssignmentCard />
+        <AssignmentCard />
+        <AssignmentCard />
+      </div>
     </div>
   );
 }

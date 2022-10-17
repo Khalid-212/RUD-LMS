@@ -3,3 +3,18 @@
   justify-content: space-evenly;
   margin: 2rem;
 }
+
+.formlink {
+  color: #1e9fe9;
+  text-decoration: none;
+  border: 1px solid #1e9fe9;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  height: fit-content;
+  width: fit-content;
+  /* justify-content: center; */
+  align-items: center;
+  text-align: center;
+  /* margin: 30vw; */
+}

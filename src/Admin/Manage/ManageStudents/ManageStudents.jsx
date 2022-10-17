@@ -4,8 +4,12 @@ import "./ManageStudents.css";
 import HeaderAdmin from "../../../Components/Header/HeaderAdmin";
 import Tabs from "../../../Components/Tabs/Tabs";
 import { addStudent } from "../../../supabase";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 function ManageStudents() {
+  const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
     await addStudent({
@@ -15,11 +19,23 @@ function ManageStudents() {
       userName: data.username,
       phoneNumber: data.phonenumber,
     });
-    alert("Student Added");
+    (async () => {
+      toast.success("Student Added Successfully");
+      await navigate("/admin/studentlist");
+    })();
   };
   return (
     <>
       <HeaderAdmin />
+      <ToastContainer
+        position="top-center"
+        autoClose={500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        theme="colored"
+      />
       <Tabs />
       <div className="manageusers">
         <form className="manageusersform" onSubmit={handleSubmit(onSubmit)}>

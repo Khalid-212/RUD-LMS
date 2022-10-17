@@ -1,0 +1,42 @@
+.formpage {
+  margin: auto;
+  padding: 2rem;
+  width: max-content;
+}
+.formpage > form {
+  display: grid;
+  place-items: center;
+  background-color: rgb(246, 246, 246);
+  padding: 2rem;
+  border-radius: 20px;
+}
+.form_input {
+  justify-content: flex-end;
+  padding: 0.2rem;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+  width: 300px;
+  height: 3rem;
+  margin: 0.5rem;
+  border: transparent;
+  box-shadow: 0 0 4px rgb(204, 204, 204);
+  border-radius: 2px 2px 0 0;
+  background-color: #f8f8f8;
+}
+.form_input:focus {
+  outline: none;
+}
+.submit_btn {
+  width: 10rem;
+}
+.formWrapper {
+  margin: 5px auto 0;
+  text-align: center;
+  width: 35vw;
+}
+.formTitle {
+  justify-content: flex-end;
+  width: max-content;
+  color: #1e9fe9;
+  font-size: 1.2rem;
+  font-weight: 500;
+}

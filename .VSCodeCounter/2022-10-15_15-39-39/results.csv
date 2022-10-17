@@ -1,0 +1,75 @@
+"filename", "language", "JavaScript", "CSS", "JavaScript React", "XML", "Markdown", "JSON", "HTML", "Properties", "(Read Error)", "comment", "blank", "total"
+"e:\project\Ruwad\LMS\lms\.env", "Properties", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"e:\project\Ruwad\LMS\lms\README.md", "Markdown", 0, 0, 0, 0, 26, 0, 0, 0, 0, 0, 21, 47
+"e:\project\Ruwad\LMS\lms\firebase-debug.log", "(Read Error)", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+"e:\project\Ruwad\LMS\lms\firebase.json", "JSON", 0, 0, 0, 0, 0, 11, 0, 0, 0, 10, 0, 21
+"e:\project\Ruwad\LMS\lms\firestore.indexes.json", "JSON", 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 5
+"e:\project\Ruwad\LMS\lms\package-lock.json", "JSON", 0, 0, 0, 0, 0, 39297, 0, 0, 0, 0, 1, 39298
+"e:\project\Ruwad\LMS\lms\package.json", "JSON", 0, 0, 0, 0, 0, 47, 0, 0, 0, 0, 1, 48
+"e:\project\Ruwad\LMS\lms\public\404.html", "HTML", 0, 0, 0, 0, 0, 0, 32, 0, 0, 0, 2, 34
+"e:\project\Ruwad\LMS\lms\public\index.html", "HTML", 0, 0, 0, 0, 0, 0, 20, 0, 0, 23, 1, 44
+"e:\project\Ruwad\LMS\lms\public\manifest.json", "JSON", 0, 0, 0, 0, 0, 25, 0, 0, 0, 0, 1, 26
+"e:\project\Ruwad\LMS\lms\src\Admin\AddStudent.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"e:\project\Ruwad\LMS\lms\src\Admin\AdminHome.css", "CSS", 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"e:\project\Ruwad\LMS\lms\src\Admin\AdminHome.jsx", "JavaScript React", 0, 0, 34, 0, 0, 0, 0, 0, 0, 0, 4, 38
+"e:\project\Ruwad\LMS\lms\src\Admin\AdminLogin.css", "CSS", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"e:\project\Ruwad\LMS\lms\src\Admin\AdminLogin.jsx", "JavaScript React", 0, 0, 74, 0, 0, 0, 0, 0, 0, 1, 3, 78
+"e:\project\Ruwad\LMS\lms\src\Admin\EvaluationPage\EvaluationPage.css", "CSS", 0, 44, 0, 0, 0, 0, 0, 0, 0, 4, 1, 49
+"e:\project\Ruwad\LMS\lms\src\Admin\EvaluationPage\EvaluationPage.jsx", "JavaScript React", 0, 0, 62, 0, 0, 0, 0, 0, 0, 0, 4, 66
+"e:\project\Ruwad\LMS\lms\src\Admin\Manage\ManageCourses\ManageCourses.css", "CSS", 0, 29, 0, 0, 0, 0, 0, 0, 0, 0, 2, 31
+"e:\project\Ruwad\LMS\lms\src\Admin\Manage\ManageCourses\ManageCourses.jsx", "JavaScript React", 0, 0, 48, 0, 0, 0, 0, 0, 0, 0, 5, 53
+"e:\project\Ruwad\LMS\lms\src\Admin\Manage\ManagePage.css", "CSS", 0, 10, 0, 0, 0, 0, 0, 0, 0, 3, 1, 14
+"e:\project\Ruwad\LMS\lms\src\Admin\Manage\ManagePage.js", "JavaScript", 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 36
+"e:\project\Ruwad\LMS\lms\src\Admin\Manage\ManageStudents\ManageStudents.css", "CSS", 0, 47, 0, 0, 0, 0, 0, 0, 0, 2, 1, 50
+"e:\project\Ruwad\LMS\lms\src\Admin\Manage\ManageStudents\ManageStudents.jsx", "JavaScript React", 0, 0, 68, 0, 0, 0, 0, 0, 0, 0, 3, 71
+"e:\project\Ruwad\LMS\lms\src\Admin\StudentList.css", "CSS", 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"e:\project\Ruwad\LMS\lms\src\Admin\StudentList.jsx", "JavaScript React", 0, 0, 40, 0, 0, 0, 0, 0, 0, 0, 4, 44
+"e:\project\Ruwad\LMS\lms\src\App.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"e:\project\Ruwad\LMS\lms\src\App.js", "JavaScript", 82, 0, 0, 0, 0, 0, 0, 0, 0, 12, 3, 97
+"e:\project\Ruwad\LMS\lms\src\Assets\logout.svg", "XML", 0, 0, 0, 56, 0, 0, 0, 0, 0, 1, 1, 58
+"e:\project\Ruwad\LMS\lms\src\Assets\notification.svg", "XML", 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 1, 7
+"e:\project\Ruwad\LMS\lms\src\Assets\user.svg", "XML", 0, 0, 0, 54, 0, 0, 0, 0, 0, 1, 1, 56
+"e:\project\Ruwad\LMS\lms\src\Components\AssignmentCard\AssignmentCard.css", "CSS", 0, 22, 0, 0, 0, 0, 0, 0, 0, 2, 1, 25
+"e:\project\Ruwad\LMS\lms\src\Components\AssignmentCard\AssignmentCard.jsx", "JavaScript React", 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"e:\project\Ruwad\LMS\lms\src\Components\AssignmentStatusCard\AssignmentStatusCard.css", "CSS", 0, 34, 0, 0, 0, 0, 0, 0, 0, 0, 1, 35
+"e:\project\Ruwad\LMS\lms\src\Components\AssignmentStatusCard\AssignmentStatusCard.jsx", "JavaScript React", 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 3, 27
+"e:\project\Ruwad\LMS\lms\src\Components\CheckBox\CheckBox.jsx", "JavaScript React", 0, 0, 20, 0, 0, 0, 0, 0, 0, 1, 5, 26
+"e:\project\Ruwad\LMS\lms\src\Components\CourseBanner\CourseBanner.css", "CSS", 0, 38, 0, 0, 0, 0, 0, 0, 0, 2, 2, 42
+"e:\project\Ruwad\LMS\lms\src\Components\CourseBanner\CourseBanner.jsx", "JavaScript React", 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 3, 26
+"e:\project\Ruwad\LMS\lms\src\Components\CourseCard\CourseCard.css", "CSS", 0, 33, 0, 0, 0, 0, 0, 0, 0, 2, 2, 37
+"e:\project\Ruwad\LMS\lms\src\Components\CourseCard\CourseCard.jsx", "JavaScript React", 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"e:\project\Ruwad\LMS\lms\src\Components\Header\Header.css", "CSS", 0, 55, 0, 0, 0, 0, 0, 0, 0, 7, 2, 64
+"e:\project\Ruwad\LMS\lms\src\Components\Header\Header.js", "JavaScript", 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 49
+"e:\project\Ruwad\LMS\lms\src\Components\Header\HeaderAdmin.jsx", "JavaScript React", 0, 0, 44, 0, 0, 0, 0, 0, 0, 0, 3, 47
+"e:\project\Ruwad\LMS\lms\src\Components\Sidebar\Sidebar.js", "JavaScript", 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 8
+"e:\project\Ruwad\LMS\lms\src\Components\SubmissionCard\SubmissionCard.css", "CSS", 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11
+"e:\project\Ruwad\LMS\lms\src\Components\SubmissionCard\SubmissionCard.jsx", "JavaScript React", 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 3, 24
+"e:\project\Ruwad\LMS\lms\src\Components\Tabs\Tabs.css", "CSS", 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 2, 23
+"e:\project\Ruwad\LMS\lms\src\Components\Tabs\Tabs.jsx", "JavaScript React", 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 3, 30
+"e:\project\Ruwad\LMS\lms\src\Components\UserCard\UserCard.css", "CSS", 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 1, 28
+"e:\project\Ruwad\LMS\lms\src\Components\UserCard\UserCard.jsx", "JavaScript React", 0, 0, 24, 0, 0, 0, 0, 0, 0, 1, 3, 28
+"e:\project\Ruwad\LMS\lms\src\Pages\CoursePages\CoursePage.css", "CSS", 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"e:\project\Ruwad\LMS\lms\src\Pages\CoursePages\CoursePage.jsx", "JavaScript React", 0, 0, 51, 0, 0, 0, 0, 0, 0, 1, 4, 56
+"e:\project\Ruwad\LMS\lms\src\Pages\CoursePages\HadisPage\HadisPage.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"e:\project\Ruwad\LMS\lms\src\Pages\CoursePages\HadisPage\HadisPage.jsx", "JavaScript React", 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 3, 23
+"e:\project\Ruwad\LMS\lms\src\Pages\CoursePages\QuranPage\QuranPage.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"e:\project\Ruwad\LMS\lms\src\Pages\CoursePages\QuranPage\QuranPage.jsx", "JavaScript React", 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 3, 23
+"e:\project\Ruwad\LMS\lms\src\Pages\CoursePages\SiraPage\SiraPage.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"e:\project\Ruwad\LMS\lms\src\Pages\CoursePages\SiraPage\SiraPage.jsx", "JavaScript React", 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 3, 23
+"e:\project\Ruwad\LMS\lms\src\Pages\FormPage\FormPage.css", "CSS", 0, 42, 0, 0, 0, 0, 0, 0, 0, 0, 1, 43
+"e:\project\Ruwad\LMS\lms\src\Pages\FormPage\FormPage.jsx", "JavaScript React", 0, 0, 90, 0, 0, 0, 0, 0, 0, 3, 5, 98
+"e:\project\Ruwad\LMS\lms\src\Pages\HomePage\Home.css", "CSS", 0, 17, 0, 0, 0, 0, 0, 0, 0, 2, 2, 21
+"e:\project\Ruwad\LMS\lms\src\Pages\HomePage\Home.js", "JavaScript", 75, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 80
+"e:\project\Ruwad\LMS\lms\src\Pages\HomePage\utin.js", "JavaScript", 15, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 20
+"e:\project\Ruwad\LMS\lms\src\Pages\UserLoginPage\UserLogin.jsx", "JavaScript React", 0, 0, 76, 0, 0, 0, 0, 0, 0, 1, 6, 83
+"e:\project\Ruwad\LMS\lms\src\Pages\UserLoginPage\userLoginPage.css", "CSS", 0, 57, 0, 0, 0, 0, 0, 0, 0, 0, 3, 60
+"e:\project\Ruwad\LMS\lms\src\adminSlice.js", "JavaScript", 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 21
+"e:\project\Ruwad\LMS\lms\src\app\store.js", "JavaScript", 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 43
+"e:\project\Ruwad\LMS\lms\src\courseSlice.js", "JavaScript", 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 17
+"e:\project\Ruwad\LMS\lms\src\firebase-config.js", "JavaScript", 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"e:\project\Ruwad\LMS\lms\src\index.css", "CSS", 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 2, 14
+"e:\project\Ruwad\LMS\lms\src\index.js", "JavaScript", 25, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 32
+"e:\project\Ruwad\LMS\lms\src\reportWebVitals.js", "JavaScript", 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 14
+"e:\project\Ruwad\LMS\lms\src\supabase.js", "JavaScript", 111, 0, 0, 0, 0, 0, 0, 0, 0, 6, 13, 130
+"e:\project\Ruwad\LMS\lms\src\userSlice.js", "JavaScript", 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 21
+"Total", "-", 502, 519, 812, 116, 26, 39384, 52, 1, 0, 90, 200, 41702
