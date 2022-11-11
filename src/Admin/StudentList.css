@@ -1,6 +1,19 @@
 .studentscards {
   display: flex;
   gap: 2rem;
-  margin: 2rem;
+  margin: 2rem auto;
+  width: 90%;
+  justify-content: center;
   flex-wrap: wrap;
+}
+.studentCount{
+  display: grid;
+  place-items: center;
+  border: 3px solid #1e9fe9;
+  width: max-content;
+  padding: 1rem;
+  margin: 2rem auto;
+  font-weight: 500;
+  box-shadow: 0 1px 5px #1e9fe9;
+  user-select: none;
 }

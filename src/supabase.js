@@ -100,9 +100,26 @@ export async function assignCourseToStudent(courseId, studentId) {
 
 export async function getCourseForStudent(StudentId) {
   const { data, error } = await supabase
-    .from("CourseToStudent")
-    .select("*")
-    .eq("StudentId", StudentId);
+  .from("CourseToStudent")
+  .select("*")
+  .eq("StudentId", StudentId);
+  errorGuard(error);
+  return data;
+}
+// rebaniya form data
+export async function getTilawa() {
+  let { data, error } = await supabase
+  .from('RebaiyaForm')
+  .select('tilawa')
+  errorGuard(error);
+  return data;
+}
+
+
+export async function getRewatibData() {
+  let { data, error } = await supabase
+  .from('RebaiyaForm')
+  .select('*')
   errorGuard(error);
   return data;
 }

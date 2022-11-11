@@ -61,7 +61,6 @@ function UserLogin() {
         rtl={false}
         theme="colored"
       />
-      s
       <div className="form">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1>Login</h1>

@@ -1,0 +1,49 @@
+.reportTable{
+    width: max-content;
+    padding: 1rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+    /* border: 1px solid #ddd; */
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+    /* align-items: flex-end; */
+    /* text-align: center; */
+  box-shadow: 0 0 4px rgb(204, 204, 204);
+
+}
+.tableTitle{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1e9fe9;
+    margin-bottom: 1rem;
+}
+.tableItem{
+    font-weight: bold;
+    padding: 8px;
+    display: flex;
+
+}
+.days{
+    color: #1e9fe9;
+    width: 6rem;
+    /* border: 1px solid darkblue; */
+    /* text-align: center; */
+}
+.amount{
+    width: 3rem;
+    color: #0a96e8;
+    text-align: left;
+    /* border: 1px solid darkblue; */
+    padding-right: 1rem;
+
+}
+.percentage{
+    color: #52048d;
+    /* border: 1px solid darkblue; */
+    width: 4rem;
+}
+.red{
+    color: red;
+}

@@ -19,11 +19,14 @@ function StudentList() {
   const adminusername = JSON.parse(
     JSON.stringify(useSelector((state) => state.adminstat).adminstat.username)
   );
-
+  const studentCount = studentList.length;
   return (
     <div>
       <HeaderAdmin username={adminusername} />
       <Tabs />
+      <div className="studentCount">
+        Total number of students: {studentCount}
+      </div>
       <div className="studentList">
         <Link to="/admin/adminhome"></Link>
         <div className="studentscards">

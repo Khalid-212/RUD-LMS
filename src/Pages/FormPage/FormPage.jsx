@@ -27,8 +27,10 @@ function FormPage() {
       tilawa: data.tilawa,
       studentId: studentId,
       datesubmitted: data.date,
+      fasting: data.fasting,
+      SunnahSelat: data.Sunnah_Selat,
     });
-    toast.sucsess("Form Submitted");
+    toast.success("Form Submitted");
   };
 
   return (
@@ -80,8 +82,18 @@ function FormPage() {
             </select>
           </div>
           <div className="formWrapper">
-            <p className="formTitle">Rewatib</p>
-            <select className="form_input" required {...register("rewatib")}>
+            <p className="formTitle">Fasting</p>
+            <select className="form_input" required {...register("fasting")}>
+              <option value="0 days">0 days</option>
+              <option value="1-2 days">1-2 days</option>
+              <option value="3-4 days">3-4 days</option>
+              <option value="5-6 days">5-6 days</option>
+              <option value="7 days">7 days</option>
+            </select>
+          </div>
+          <div className="formWrapper">
+            <p className="formTitle">Sunnah Selat</p>
+            <select className="form_input" required {...register("Sunnah_Selat")}>
               <option value="0 days">0 days</option>
               <option value="1-2 days">1-2 days</option>
               <option value="3-4 days">3-4 days</option>

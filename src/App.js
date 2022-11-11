@@ -7,6 +7,7 @@ import EvaluationPage from "./Admin/EvaluationPage/EvaluationPage";
 import ManageCourses from "./Admin/Manage/ManageCourses/ManageCourses";
 import ManagePage from "./Admin/Manage/ManagePage";
 import ManageStudents from "./Admin/Manage/ManageStudents/ManageStudents";
+import ReportPage from "./Admin/ReportPage/ReportPage";
 import StudentList from "./Admin/StudentList";
 import { selectadmin } from "./adminSlice";
 import "./App.css";
@@ -63,6 +64,12 @@ function App() {
           path="/admin/home"
           element={admnisloggedin ? <AdminHome /> : <AdminHome />}
         />
+        <Route
+          exact
+          path="/admin/Reports"
+          element={admnisloggedin ? <ReportPage /> : <AdminHome />}
+        />
+
         <Route
           exact
           path="/admin/studentlist"
