@@ -11,6 +11,12 @@ function ReportTable({title,property}) {
         return (numA / numB) * 100;
       }
       const totalPercentage = percentageCalculator(total,property.length)
+      const sevenDays = property.filter(el => el === "7 days").length * 100
+      const sixDays = property.filter(el => el === "5-6 days").length * 80
+      const fourDays = property.filter(el => el === "3-4 days").length * 60
+      const twoDays = property.filter(el => el === "1-2 days").length * 40
+      const zeroDays = property.filter(el => el === "0 days").length * 0
+        const totalScore = (sevenDays + sixDays + fourDays + twoDays + zeroDays) / 100
   return (
     <div className="reportTable">
               <div className='tableTitle'>{title} </div>
@@ -70,7 +76,7 @@ function ReportTable({title,property}) {
         </div>
         </div>
         <div>
-            {/* total: {total} */}
+            total: {totalScore.toFixed(2)}%
         </div>
     </div>
   )

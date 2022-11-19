@@ -38,7 +38,7 @@ function AdminLogin() {
     navigate("/admin/home");
   }
   return (
-    <div>
+    <div className="adminLoginPage">
       <Header username={currentusername === null ? "" : currentusername} />
       <div className="form">
         <ToastContainer
@@ -51,9 +51,9 @@ function AdminLogin() {
           theme="colored"
         />
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Login</h1>
+          <h1>Admin Login</h1>
           <input
-            className="UsernameInput"
+            className="UsernameInput adminInput"
             type="text"
             placeholder="username"
             {...register("username", {})}
@@ -61,12 +61,12 @@ function AdminLogin() {
           />
           <input
             required
-            className="PasswordInput"
+            className="PasswordInput adminInput"
             type="password"
             placeholder="password"
             {...register("password", {})}
           />
-          <input className="SubmitButton" type="submit" />
+          <input className="SubmitButton adminInput" type="submit" />
         </form>
         {/* <button onClick={caller}>try</button> */}
       </div>

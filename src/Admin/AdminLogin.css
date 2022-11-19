@@ -1,3 +1,10 @@
 .error {
   border: 1px solid red;
 }
+.adminLoginPage{
+  background: #ebecec;
+  height: 100vh;
+}
+.adminInput{
+  background-color: #ebecec!important;
+}

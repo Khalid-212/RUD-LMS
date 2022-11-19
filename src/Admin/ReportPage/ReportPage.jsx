@@ -21,6 +21,7 @@ function ReportPage() {
         const fasting = rewatib.map((rewatib) => rewatib.fasting)
         const SunnahSelat = rewatib.map((rewatib) => rewatib.SunnahSelat)
         const witr = rewatib.map((rewatib) => rewatib.witr)
+        const Azkar = rewatib.map((rewatib) => rewatib.Azkar)
         // get tilawaawa count from rewatibdata
 
       useEffect(() => {
@@ -38,6 +39,7 @@ function ReportPage() {
         <ReportTable property={Selat} title="Selat in Jema'a"/>
         <ReportTable property={witr} title="Witr"/>
         <ReportTable property={fasting} title="Fasting"/>
+        <ReportTable property={Azkar} title="Azkar"/>
         <ReportTable property={SunnahSelat} title="Sunah Selat"/>
         </div>
     </div>

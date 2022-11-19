@@ -80,12 +80,12 @@ function UserLogin() {
             placeholder="password"
             {...register("password", {})}
           />
-          <Link
+          {/* <Link
             to="/admin"
             style={{ textDecoration: "none", color: "#1e9fe9" }}
           >
             admin login
-          </Link>
+          </Link> */}
           <input className="SubmitButton" type="submit" />
         </form>
         {/* <button onClick={tes}>try</button> */}
