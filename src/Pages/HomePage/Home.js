@@ -4,9 +4,12 @@ import { Link } from "react-router-dom";
 import CourseCard from "../../Components/CourseCard/CourseCard";
 import Header from "../../Components/Header/Header";
 import "./Home.css";
-import { getCourse, getCourseForStudent } from "../../supabase";
+import { getAssignments, getCourse, getCourseForStudent, getQuestions } from "../../supabase";
 import { usercourse } from "../../courseSlice";
-import { SyncLoader } from "react-spinners";
+import { SyncLoader,BarLoader } from "react-spinners";
+import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
+import { userassignment } from "../../assignmentSlice";
+
 
 function Home() {
   const username = JSON.parse(
@@ -39,12 +42,28 @@ function Home() {
       })
     );
   };
+  const selectedAssignmnet = (selected) => {
+    dispatch(
+      userassignment(
+         selected,
+      )
+    );
+  };
+  const [questions, setQuestions] = useState();
+  const getQuestionList = async () => {
+    setQuestions(await getQuestions());
+  };
 
+  useEffect(() => {
+    getQuestionList();
+  }, []);
+  console.log(courses)
+ 
   return (
     <div>
       <Header username={username ? username : ""} />
       <div className="courseList">
-        {courses ? (
+        {/* {courses ? (
           courses.map((course) => (
             <Link
               onClick={() =>
@@ -67,10 +86,27 @@ function Home() {
           ))
         ) : (
           <SyncLoader color="#1e9fe9" />
-        )}
+        )} */}
         <Link to="/form" className="formlink">
           Rewatib Form
         </Link>
+      </div>
+      {/* <Link to="/assignmentsubmissionpage">
+          Assignments
+        </Link> */}
+
+        <div className="assignmentList">
+        {questions?questions.map((question)=>(
+          <Link to="/assignmentsubmissionpage" onClick={()=>
+            selectedAssignmnet(question.id)
+          } style={{ textDecoration: "none" }}
+          key={question.id}
+          >
+            <AssignmentCard number={question.number}/>
+          </Link>
+        )):
+        <SyncLoader/>
+      }
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "../userSlice";
+import assignmentReducer from "../assignmentSlice";
 import adminstatReducer from "../adminSlice";
 import courseReducer from "../courseSlice";
 import storage from "redux-persist/lib/storage";
@@ -24,6 +25,7 @@ const reducer = combineReducers({
   user: userReducer,
   adminstat: adminstatReducer,
   course: courseReducer,
+  assignment: assignmentReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

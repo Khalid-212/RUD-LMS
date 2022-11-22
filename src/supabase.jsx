@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
 const supabaseUrl = "https://yowdzcszgmmoftgqtahz.supabase.co";
 const supabaseKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlvd2R6Y3N6Z21tb2Z0Z3F0YWh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjQzNjUzMjEsImV4cCI6MTk3OTk0MTMyMX0.OcQcwv8GeT4IuzUMXjtjhzy1Nu7sShbcjXtfJdmpV6Y";
@@ -63,11 +63,19 @@ export async function addStudent(student) {
   return data;
 }
 
-export async function getCourses() {
-  const { data, error } = await supabase.from("Courses").select("*");
+// export async function getCourses() {
+//   const { data, error } = await supabase.from("Courses").select("*");
+//   errorGuard(error);
+//   return data;
+// }
+
+// a finction to get all courses
+export async function getallCourses() {
+  const { data, error } = await supabase.from("Course").select("*");
   errorGuard(error);
   return data;
 }
+
 export async function getCourse(id) {
   const { data, error } = await supabase
     .from("Course")
@@ -80,8 +88,9 @@ export async function getCourse(id) {
 export async function addCourse(course) {
   const { data, error } = await supabase.from("Course").insert(course);
   errorGuard(error);
-  return data[0];
+  return data;
 }
+
 export async function assignCourseToStudent(courseId, studentId) {
   const student = await getStudent(studentId);
   if (!student) {
@@ -97,29 +106,61 @@ export async function assignCourseToStudent(courseId, studentId) {
   errorGuard(error);
   return data[0];
 }
+export async function getimagesinDB() {
+  const { data, error } = await supabase.storage.getBucket("profilepictures");
+  errorGuard(error);
+  return data;
+}
+// a function to assign courses to all students
 
 export async function getCourseForStudent(StudentId) {
   const { data, error } = await supabase
-  .from("CourseToStudent")
-  .select("*")
-  .eq("StudentId", StudentId);
+    .from("CourseToStudent")
+    .select("*")
+    .eq("StudentId", StudentId);
   errorGuard(error);
   return data;
 }
+
+export async function submitAnswer(answer) {
+  const { data, error } = await supabase.from("Assignment").insert(answer);
+  errorGuard(error);
+  return data;
+}
+
+export async function getAllAssignmentsListing() {
+  const { data, error } = await supabase.from("Assignment").select("*");
+  errorGuard(error);
+  return data;
+}
+
+export async function addQuestion(question) {
+  const { data, error } = await supabase
+    .from("QuestionDefinition")
+    .insert(question);
+  errorGuard(error);
+  return data;
+}
+
+// get assignment by id
+export async function getAssignmentById(id) {
+  const { data, error } = await supabase
+    .from("Assignment")
+    .select("*")
+    .eq("StudentId", id);
+  errorGuard(error);
+  return data;
+}
+
 // rebaniya form data
 export async function getTilawa() {
-  let { data, error } = await supabase
-  .from('RebaiyaForm')
-  .select('tilawa')
+  let { data, error } = await supabase.from("RebaiyaForm").select("tilawa");
   errorGuard(error);
   return data;
 }
 
-
 export async function getRewatibData() {
-  let { data, error } = await supabase
-  .from('RebaiyaForm')
-  .select('*')
+  let { data, error } = await supabase.from("RebaiyaForm").select("*");
   errorGuard(error);
   return data;
 }
@@ -131,11 +172,40 @@ export async function getAdmin() {
   return data;
 }
 
+export async function getQuestions() {
+  const { data, error } = await supabase.from("QuestionDefinition").select("*");
+  errorGuard(error);
+  return data;
+}
+
+export async function getQuestionById(id) {
+  const { data, error } = await supabase
+    .from("QuestionDefinition")
+    .select("*")
+    .eq("id", id);
+  errorGuard(error);
+  return data;
+}
+
 export async function addAdmin(admin) {
   const { data, error } = await supabase.from("Admin").insert(admin);
   errorGuard(error);
   return data[0];
 }
+
+// update correct answer
+export async function updateCorrectAnswer(id, Correct, QuestionId) {
+  const { data, error } = await supabase
+    .from("Assignment")
+    .update({ Correct: "Correct" })
+    .eq("Question", QuestionId);
+  errorGuard(error);
+  return data;
+}
+
+// let { data: Assignment, error } = await supabase
+//   .from("Assignment")
+//   .select("Correct");
 
 // creat add rebaniya
 export async function submitRebaniyaform(rebaniya) {
@@ -150,6 +220,18 @@ export async function addSession(studentId) {
   const { data, error } = await supabase
     .from("studentSession")
     .insert(studentId);
+  errorGuard(error);
+  return data;
+}
+// get all images from supabase
+export async function getImages() {
+  const { data, error } = await supabase.storage.getBucket("profilepictures");
+  errorGuard(error);
+  return data;
+}
+
+export async function allBuckets() {
+  const { data, error } = await supabase.storage.listBuckets();
   errorGuard(error);
   return data;
 }

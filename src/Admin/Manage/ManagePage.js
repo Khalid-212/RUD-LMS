@@ -27,6 +27,12 @@ function ManagePage() {
         >
           <div className="manageCard">Manage courses</div>
         </Link>
+        <Link
+          style={{ textDecoration: "none" }}
+          to="/admin/manage/manageAssignments"
+        >
+          <div className="manageCard">Add Assignment</div>
+        </Link>
       </div>
     </>
   );

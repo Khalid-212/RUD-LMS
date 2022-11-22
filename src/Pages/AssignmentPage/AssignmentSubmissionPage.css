@@ -1,0 +1,43 @@
+.AnswerInput{
+    width: 70%;
+    height: 30vh;
+    font-size: 1.2em;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+.AnswerInput::placeholder{
+    color: #aaa;
+    font-size: x-large;
+}
+.AnswerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+}
+
+.AnswerButton{
+    width: 20%;
+    height: 5vh;
+    font-size: 1.2em;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    color: #1e9fe9;
+}
+
+.assignmentPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid black; */
+    color: #1e9fe9;
+}

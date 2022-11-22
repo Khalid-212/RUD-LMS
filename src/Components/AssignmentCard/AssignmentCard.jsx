@@ -1,12 +1,11 @@
 import React from "react";
 import "./AssignmentCard.css";
 
-function AssignmentCard() {
+function AssignmentCard({number}) {
   return (
     <div className="assignmentCard">
       <div className="assignmentCardItems">
-        <h3 className="assignmentTitle">Assignment 1</h3>
-        <div className="tick">&#10003;</div>
+        <h3 className="assignmentTitle">Assignment {number}</h3>
       </div>
     </div>
   );

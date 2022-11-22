@@ -1,0 +1,16 @@
+.questionCard{
+    border: 1px solid #1e9fe9;
+    height: max-content!important;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: large;
+    color: #1e9fe9;
+}
+.questionWrapper{
+    margin: 1rem;
+    display: flex;
+    gap: .5rem;
+}
+.questionNumber{
+    color: #136ea3;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
+import AddAssignmentPage from "./Admin/AddAssignmentPage/AddAssignmentPage";
 import AdminHome from "./Admin/AdminHome";
 import AdminLogin from "./Admin/AdminLogin";
 import EvaluationPage from "./Admin/EvaluationPage/EvaluationPage";
@@ -11,9 +12,11 @@ import ReportPage from "./Admin/ReportPage/ReportPage";
 import StudentList from "./Admin/StudentList";
 import { selectadmin } from "./adminSlice";
 import "./App.css";
+import AssignmentSubmissionPage from "./Pages/AssignmentPage/AssignmentSubmissionPage";
 import CoursePage from "./Pages/CoursePages/CoursePage";
 import FormPage from "./Pages/FormPage/FormPage";
 import Home from "./Pages/HomePage/Home";
+import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
 import UserLogin from "./Pages/UserLoginPage/UserLogin";
 import { selectUser } from "./userSlice";
 // import HadisPage from "./Pages/CoursePages/HadisPage/HadisPage";
@@ -26,14 +29,11 @@ function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="*" element={<NotFoundPage />} />
         <Route exact path="/" element={user ? <Home /> : <UserLogin />} />
         <Route exact path="/home" element={user ? <Home /> : <UserLogin />} />
         <Route exact path="/userlogin" element={<UserLogin />} />
-        {/* <Route
-          exact
-          path="/sirapage"
-          element={user ? <SiraPage /> : <UserLogin />}
-        /> */}
+      
         <Route
           exact
           path="/coursepage"
@@ -44,16 +44,12 @@ function App() {
           path="/form"
           element={user ? <FormPage /> : <UserLogin />}
         />
-        {/* <Route
+        
+        <Route
           exact
-          path="/hadispage"
-          element={user ? <HadisPage /> : <UserLogin />}
-        /> */}
-        {/* <Route
-          exact
-          path="/quranpage"
-          element={user ? <QuranPage /> : <UserLogin />}
-        /> */}
+          path="/AssignmentSubmissionPage"
+          element={user ? <AssignmentSubmissionPage /> : <UserLogin />}
+        />
         <Route
           exact
           path="/admin"
@@ -62,12 +58,12 @@ function App() {
         <Route
           exact
           path="/admin/home"
-          element={admnisloggedin ? <AdminHome /> : <AdminHome />}
+          element={admnisloggedin ? <AdminHome /> : <AdminLogin />}
         />
         <Route
           exact
           path="/admin/Reports"
-          element={admnisloggedin ? <ReportPage /> : <AdminHome />}
+          element={admnisloggedin ? <ReportPage /> : <AdminLogin />}
         />
 
         <Route
@@ -89,6 +85,11 @@ function App() {
           exact
           path="/admin/manage/managecourses"
           element={admnisloggedin ? <ManageCourses /> : <AdminLogin />}
+        />
+        <Route
+          exact
+          path="/admin/manage/manageAssignments"
+          element={admnisloggedin ? <AddAssignmentPage /> : <AdminLogin />}
         />
         <Route
           exact
