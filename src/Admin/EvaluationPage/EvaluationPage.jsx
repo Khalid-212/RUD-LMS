@@ -1,27 +1,56 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import HeaderAdmin from "../../Components/Header/HeaderAdmin";
 import Tabs from "../../Components/Tabs/Tabs";
-import { getStudentById } from "../../supabase";
+import {
+  getAssignmentById,
+  getQuestionById,
+  getStudentById,
+  updateCorrectAnswer,
+} from "../../supabase";
 import useravatar from "../../Assets/user.svg";
 import "./EvaluationPage.css";
 import AssignmentStatusCard from "../../Components/AssignmentStatusCard/AssignmentStatusCard";
 
 function EvaluationPage() {
-  const [student, setStudent] = React.useState([]);
+  const [student, setStudent] = useState([]);
+  const [assignments, setAssignments] = useState([]);
+  const [questions, setQuestions] = useState([]);
   const studentId = useSelector((state) => state.adminstat).studenttoreview;
   const getStudent = async () => {
     setStudent(await getStudentById(studentId));
+    setAssignments(await getAssignmentById(studentId));
   };
+
   useEffect(() => {
     getStudent();
   }, []);
 
+  // console.log(assignments ? assignments[0].Question : "question");
+
+  const getQuestion = async () => {
+    for (let i = 0; i < assignments.length; i++) {
+      await getQuestionById(assignments[i].Question).then((data) => {
+        setQuestions((prev) => [...prev, data]);
+      });
+    }
+  };
+
+  // if (assignments) {
+  useEffect(() => {
+    getQuestion();
+  }, [assignments]);
+  // }
+
+  // console.log(questions);
+  const clicked = async (prop) => {
+    await updateCorrectAnswer(prop);
+  };
   return (
     <div>
       <HeaderAdmin />
       <Tabs />
-      <div className="evaluationPageHeader">
+      {/* <div className="evaluationPageHeader">
         <div className="evaluationPageHeaderLeft">
           <img src={useravatar} alt="" className="Studentprofilepic" />
           <h1>{student.firstName + " " + student.lastName}</h1>
@@ -40,24 +69,53 @@ function EvaluationPage() {
             <progress value={84} max="100" />
           </div>
         </div>
-      </div>
-      <div className="Submissions">
-        <AssignmentStatusCard
-          Assignmentnumber={4}
-          Assignmentstatus={"done"}
-          AssingmentSubmissionDate={"25-5-25"}
-        />
-        <AssignmentStatusCard
-          Assignmentnumber={5}
-          Assignmentstatus={"done"}
-          AssingmentSubmissionDate={"2-5-25"}
-        />
-        <AssignmentStatusCard
-          Assignmentnumber={6}
-          Assignmentstatus={"pending"}
-          AssingmentSubmissionDate={"4-5-25"}
-        />
-      </div>
+      </div> */}
+      {/* {questions
+        ? questions.map((question) => <div>{question.Question}</div>)
+        : "question"}
+      {assignments
+        ? assignments.map((assignment) => (
+            <div key={assignment.id}>{assignment.Answer}</div>
+          ))
+        : ""} */}
+      {assignments
+        ? assignments.map((assignment, index) => (
+            <div>
+              <br />
+              <br />
+              <div className="assignmentQuestion" key={assignment.id}>
+                <h3>
+                  Question number{" "}
+                  {questions[index] ? questions[index][0].number : ""}
+                </h3>
+                {questions[index] ? questions[index][0].Question : ""}
+              </div>
+              <div className="assignmentAnswer">
+                <h3>Answer</h3>
+                <p>{assignment.Answer}</p>
+                <div className="buttons">
+                  <button
+                    onClick={() => {
+                      clicked("5f3f379c-6f25-4404-8026-32e0c3ce98e9", "true");
+                    }}
+                  >
+                    Accept
+                  </button>
+                  <button
+                    onClick={() => {
+                      clicked(
+                        "a1294818-c0d2-4007-8cba-0886d78bda49",
+                        "a1294818-c0d2-4007-8cba-0886d78bda49"
+                      );
+                    }}
+                  >
+                    Reject
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))
+        : ""}
     </div>
   );
 }
