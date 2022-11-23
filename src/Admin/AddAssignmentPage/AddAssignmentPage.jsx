@@ -5,12 +5,14 @@ import QuestionCard from "../../Components/QuestionCard/QuestionCard";
 import Tabs from "../../Components/Tabs/Tabs";
 import { addQuestion, getQuestions } from "../../supabase";
 import "./AddAssignmentPage.css";
+import { ToastContainer, toast } from "react-toastify";
 
 function AddAssignmentPage() {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
     console.log(data);
     addQuestion(data);
+    toast.success("Question Added");
   };
   const [questions, setQuestions] = useState();
   const getQuestionList = async () => {
@@ -22,6 +24,16 @@ function AddAssignmentPage() {
   return (
     <div>
       <HeaderAdmin />
+      <ToastContainer
+        position="top-center"
+        autoClose={500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        theme="colored"
+      />
+
       <Tabs />
       <form className="addQuestionForn" onSubmit={handleSubmit(onSubmit)}>
         <h3>Add Question</h3>

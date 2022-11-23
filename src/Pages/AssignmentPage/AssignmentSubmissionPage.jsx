@@ -11,6 +11,7 @@ import {
   submitAnswer,
 } from "../../supabase";
 import "./AssignmentSubmissionPage.css";
+import { toast, ToastContainer } from "react-toastify";
 
 function AssignmentSubmissionPage() {
   const [StudentName, setStudentName] = useState("");
@@ -23,6 +24,7 @@ function AssignmentSubmissionPage() {
       Answer: data.Answer,
       StudentName: StudentName,
     });
+    toast.success("Answer Submitted");
   };
 
   const uID = JSON.parse(
@@ -51,6 +53,16 @@ function AssignmentSubmissionPage() {
   return (
     <div>
       <Header />
+      <ToastContainer
+        position="top-center"
+        autoClose={500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        theme="colored"
+      />
+
       <div className="assignmentPage">
         <h3>Question {question ? question[0].number : ""}</h3>
         <div className="question">
