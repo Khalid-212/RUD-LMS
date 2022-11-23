@@ -8,7 +8,6 @@ import {
   getStudentById,
   updateCorrectAnswer,
 } from "../../supabase";
-import useravatar from "../../Assets/user.svg";
 import "./EvaluationPage.css";
 import AssignmentStatusCard from "../../Components/AssignmentStatusCard/AssignmentStatusCard";
 
