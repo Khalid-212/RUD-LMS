@@ -70,14 +70,6 @@ function EvaluationPage() {
           </div>
         </div>
       </div> */}
-      {/* {questions
-        ? questions.map((question) => <div>{question.Question}</div>)
-        : "question"}
-      {assignments
-        ? assignments.map((assignment) => (
-            <div key={assignment.id}>{assignment.Answer}</div>
-          ))
-        : ""} */}
       {assignments
         ? assignments.map((assignment, index) => (
             <div>
