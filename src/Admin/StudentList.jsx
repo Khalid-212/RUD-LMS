@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { SyncLoader } from "react-spinners";
 import HeaderAdmin from "../Components/Header/HeaderAdmin";
 import Tabs from "../Components/Tabs/Tabs";
 import UserCard from "../Components/UserCard/UserCard";
@@ -28,15 +29,20 @@ function StudentList() {
         Total number of students: {studentCount}
       </div>
       <div className="studentList">
-        <Link to="/admin/adminhome"></Link>
+        {/* <Link to="/admin/adminhome"></Link> */}
         <div className="studentscards">
-          {studentList.map((student) => (
-            <UserCard
-              studentName={student.firstName + " " + student.lastName}
-              key={student.id.toString()}
-              val={student.id}
-            />
-          ))}
+          {studentList.length > 0 ? (
+            studentList.map((student) => (
+              <UserCard
+                studentName={student.firstName + " " + student.lastName}
+                key={student.id.toString()}
+                val={student.id}
+              />
+            ))
+          ) : (
+            // <div>loading ...</div>
+            <SyncLoader color="#1e9fe9" />
+          )}
         </div>
       </div>
     </div>

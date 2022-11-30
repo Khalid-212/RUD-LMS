@@ -17,7 +17,7 @@ import "./AdminHome.css";
 
 function AdminHome() {
   const adminusername = JSON.parse(
-    JSON.stringify(useSelector((state) => state.adminstat).adminstat.username)
+    JSON.stringify(useSelector((state) => state.adminstat).adminstat.firstname)
   );
 
   // a function to get all assignments and get student name from assignment.Student

@@ -13,11 +13,12 @@ function UserCard({ studentName, val }) {
   };
   return (
     <>
-      <Link to="/admin/manage/evaluation">
+      <Link to="/admin/manage/evaluation"
+      style={{ textDecoration: "none" }}
+      >
         <div className="usercard" onClick={() => cardclick({ val })}>
-          <img src={studentPicture} alt="" className="userPicture" />
+          {/* <img src={studentPicture} alt="" className="userPicture" /> */}
           <p>{studentName}</p>
-          {/* <p>ffe</p> */}
         </div>
       </Link>
     </>

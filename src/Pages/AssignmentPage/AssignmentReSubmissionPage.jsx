@@ -23,10 +23,9 @@ function AssignmentSubmissionPage() {
       Question: questionId,
       Answer: data.Answer,
       StudentName: StudentName,
-      resubmitted: false,
+      resubmitted: true,
     });
     toast.success("Answer Submitted");
-    window.location.reload();
   };
 
   const uID = JSON.parse(

@@ -1,10 +1,11 @@
 .questionCard{
     border: 1px solid #1e9fe9;
     height: max-content!important;
-    margin: 1rem;
+    margin: 1rem auto;
     padding: 1rem;
     font-size: large;
     color: #1e9fe9;
+    width: 70%; 
 }
 .questionWrapper{
     margin: 1rem;
