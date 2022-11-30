@@ -22,7 +22,7 @@ function AddAssignmentPage() {
     getQuestionList();
   }, []);
   return (
-    <div>
+    <>
       <HeaderAdmin />
       <ToastContainer
         position="top-center"
@@ -35,27 +35,32 @@ function AddAssignmentPage() {
       />
 
       <Tabs />
-      <form className="addQuestionForn" onSubmit={handleSubmit(onSubmit)}>
-        <h3>Add Question</h3>
-        <textarea
-          className="addQuestionInput"
-          type="text"
-          placeholder="Add Question"
-          {...register("Question", {})}
-          required
-        />
-        <input className="submit_btn" type="submit" />
-      </form>
-      {questions
-        ? questions.map((question) => (
-            <QuestionCard
-              Questionnumber={question.number}
-              QuestionBody={question.Question}
-              key={question.id}
-            />
-          ))
-        : ""}
-    </div>
+      <div className="AddAssignmentPage">
+        <form className="addQuestionForn" onSubmit={handleSubmit(onSubmit)}>
+          <h3>Add Question</h3>
+          <textarea
+            className="addQuestionInput"
+            type="text"
+            placeholder="Add Question"
+            {...register("Question", {})}
+            required
+          />
+          <input className="submit_btn" type="submit" />
+        </form>
+        <div className="questionList">
+        <div className="center p">Previous Questions</div>
+          {questions
+            ? questions.map((question) => (
+                <QuestionCard
+                  Questionnumber={question.number}
+                  QuestionBody={question.Question}
+                  key={question.id}
+                />
+              ))
+            : ""}
+        </div>
+      </div>
+    </>
   );
 }
 

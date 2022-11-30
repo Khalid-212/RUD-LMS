@@ -9,12 +9,29 @@
   padding: 1rem;
   margin: 1rem;
 }
+.assignmentCardRejected {
+}
+.assignmentCardItemsRejected {
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  background-color: #e91e1e;
+  border: 3px solid #e91e1e;
+  width: fit-content;
+  height: 4rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+.assignmentTitleRejected {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
 .assignmentTitle {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #000000;
   color: #1e9fe9;
-  /* background-color: #2e5b35; */
   text-align: center;
 }
 .tick {

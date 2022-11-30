@@ -1,38 +1,59 @@
-.reportDisplayTable{
-    display: flex;
-    flex-wrap: wrap;
-    width: 70%;
-    gap: 4rem;
-    /* border: 1px solid brown; */
-    padding: 1rem;
-    margin: auto;
-    align-items: center;
-    justify-content: center;
+.reportDisplayTable {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  gap: 4rem;
+  /* border: 1px solid brown; */
+  padding: 1rem;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
 }
-.totalSubmissions{
-    display: grid;
-    place-items: center;
-    border: 3px solid #1e9fe9;
-    width: max-content;
-    padding: 1rem;
-    margin: 2rem auto;
-    font-weight: 500;
-    box-shadow: 0 1px 5px #1e9fe9;
-    user-select: none;
+.totalRewatibSubmissions {
+  display: flex;
+  gap: 1rem;
+  color: #1e9fe9;
+  width: max-content;
+  padding: 1rem;
+  font-weight: 500;
+  user-select: none;
 }
-.PrintButton{
-    padding: .5rem;
-    position: absolute;
-    z-index: 2;
-    top: 10rem;
-    right: 2rem;
-    color: #1e9fe9;
-    border: 2px solid #1e9fe9;
-    background-color: white;
-    border-radius: 5px;
-    cursor: pointer;
+.datePicker {
+  border: transparent;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: #1e9fe9;
+}
+.datePicker:focus {
+  outline: none;
+}
+.ReportPageheader {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin: auto;
+  box-shadow: 0px 1px 19px #f5f4f484;
+  margin: 2rem auto;
+  align-items: center;
+}
+.ReportPageheader > div > span {
+  font-weight: 500;
+  font-size: small;
+  color: #1e9fe9;
+}
+.PrintButton {
+  padding: 0.5rem;
+  display: flex;
+  color: #1e9fe9;
+  border: 2px solid #1e9fe9;
+  background-color: white;
+  border-radius: 5px;
+  margin: 1rem auto;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
 }
 .PrintButton:active {
-    box-shadow: 0 1px 5px #666;
-    transform: translatex(1px);
-  }
+  box-shadow: 0 1px 5px #666;
+  transform: translatex(1px);
+}

@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import AddAssignmentPage from "./Admin/AddAssignmentPage/AddAssignmentPage";
 import AdminHome from "./Admin/AdminHome";
 import AdminLogin from "./Admin/AdminLogin";
+import AssignmentReportPage from "./Admin/AssignmentReportPage/AssignmentReportPage";
+import Assignmentreport from "./Admin/AssignmentReportPage/AssignmentReportPage";
 import EvaluationPage from "./Admin/EvaluationPage/EvaluationPage";
 import ManageCourses from "./Admin/Manage/ManageCourses/ManageCourses";
 import ManagePage from "./Admin/Manage/ManagePage";
@@ -19,6 +21,7 @@ import Home from "./Pages/HomePage/Home";
 import NotFoundPage from "./Pages/NotFoundPage/NotFoundPage";
 import UserLogin from "./Pages/UserLoginPage/UserLogin";
 import { selectUser } from "./userSlice";
+import AssignmentReSubmissionPage from "./Pages/AssignmentPage/AssignmentReSubmissionPage";
 // import HadisPage from "./Pages/CoursePages/HadisPage/HadisPage";
 // import QuranPage from "./Pages/CoursePages/QuranPage/QuranPage";
 // import SiraPage from "./Pages/CoursePages/SiraPage/SiraPage";
@@ -33,7 +36,7 @@ function App() {
         <Route exact path="/" element={user ? <Home /> : <UserLogin />} />
         <Route exact path="/home" element={user ? <Home /> : <UserLogin />} />
         <Route exact path="/userlogin" element={<UserLogin />} />
-      
+
         <Route
           exact
           path="/coursepage"
@@ -44,11 +47,16 @@ function App() {
           path="/form"
           element={user ? <FormPage /> : <UserLogin />}
         />
-        
+
         <Route
           exact
           path="/AssignmentSubmissionPage"
           element={user ? <AssignmentSubmissionPage /> : <UserLogin />}
+        />
+        <Route
+          exact
+          path="/AssignmentreSubmissionPage"
+          element={user ? <AssignmentReSubmissionPage /> : <UserLogin />}
         />
         <Route
           exact
@@ -95,6 +103,11 @@ function App() {
           exact
           path="/admin/manage/evaluation"
           element={admnisloggedin ? <EvaluationPage /> : <AdminLogin />}
+        />
+        <Route
+          exact
+          path="/admin/Assignmentreport"
+          element={admnisloggedin ? <AssignmentReportPage /> : <AdminLogin />}
         />
       </Routes>
     </div>

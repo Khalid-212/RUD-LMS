@@ -164,7 +164,40 @@ export async function getRewatibData() {
   errorGuard(error);
   return data;
 }
+
+// get rewati data by dateSubmitted
+export async function getRewatiDataByDate(dateSubmitted) {
+  let { data, error } = await supabase
+    .from("RebaiyaForm")
+    .select("*")
+    .eq("datesubmitted", dateSubmitted);
+  errorGuard(error);
+  return data;
+}
 // get students from course
+
+export async function getRewatiDataByDateAndStudentId(
+  dateSubmitted,
+  studentId
+) {
+  let { data, error } = await supabase
+    .from("RebaiyaForm")
+    .select("*")
+    .eq("datesubmitted", dateSubmitted)
+    .eq("studentId", studentId);
+  errorGuard(error);
+  return data;
+}
+
+// get rewatib by student id
+export async function getRewatibByStudentId(id) {
+  let { data, error } = await supabase
+    .from("RebaiyaForm")
+    .select("*")
+    .eq("studentId", id);
+  errorGuard(error);
+  return data;
+}
 
 export async function getAdmin() {
   const { data, error } = await supabase.from("Admin").select("*");
@@ -174,6 +207,15 @@ export async function getAdmin() {
 
 export async function getQuestions() {
   const { data, error } = await supabase.from("QuestionDefinition").select("*");
+  errorGuard(error);
+  return data;
+}
+
+export async function getStudentByQuestionId(QuestionId) {
+  const { data, error } = await supabase
+    .from("Assignment")
+    .select("*")
+    .eq("Question", QuestionId);
   errorGuard(error);
   return data;
 }
@@ -194,23 +236,30 @@ export async function addAdmin(admin) {
 }
 
 // update correct answer
-export async function updateCorrectAnswer(id, Correct, QuestionId) {
+export async function updateCorrectAnswer(id, correctAnswer, studentId) {
   const { data, error } = await supabase
     .from("Assignment")
-    .update({ Correct: "Correct" })
-    .eq("Question", QuestionId);
+    .update({ Correct: correctAnswer })
+    .eq("Question", id)
+    .eq("StudentId", studentId);
   errorGuard(error);
   return data;
 }
 
-// let { data: Assignment, error } = await supabase
-//   .from("Assignment")
-//   .select("Correct");
+// getRejectedsubmissions
+export async function getRejectedSubmissions(studentId) {
+  const { data, error } = await supabase
+    .from("Assignment")
+    .select("*")
+    .eq("StudentId", studentId)
+    .eq("Correct", "rejected");
+  errorGuard(error);
+  return data;
+}
 
 // creat add rebaniya
 export async function submitRebaniyaform(rebaniya) {
   const { data, error } = await supabase.from("RebaiyaForm").insert(rebaniya);
-  // const { data, error } = await supabase.from("Course").insert(course);
   errorGuard(error);
   return data;
 }

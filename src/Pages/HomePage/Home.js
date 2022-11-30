@@ -4,12 +4,18 @@ import { Link } from "react-router-dom";
 import CourseCard from "../../Components/CourseCard/CourseCard";
 import Header from "../../Components/Header/Header";
 import "./Home.css";
-import { getAssignments, getCourse, getCourseForStudent, getQuestions } from "../../supabase";
+import {
+  getAssignments,
+  getCourse,
+  getCourseForStudent,
+  getQuestions,
+  getRejectedSubmissions,
+} from "../../supabase";
 import { usercourse } from "../../courseSlice";
-import { SyncLoader,BarLoader } from "react-spinners";
+import { SyncLoader, BarLoader } from "react-spinners";
 import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
 import { userassignment } from "../../assignmentSlice";
-
+import AssignmentCardRejected from "../../Components/AssignmentCard/AssignmentCardRejected";
 
 function Home() {
   const username = JSON.parse(
@@ -31,8 +37,18 @@ function Home() {
     setCourses(courses);
   };
 
+  const [RejectedAssignments, setRejectedAssignments] = useState();
+
+  const rejectedSubmissions = async () => {
+    await getRejectedSubmissions(uid).then((data) => {
+      setRejectedAssignments(data);
+      // console.log(data);
+    });
+  };
+
   useEffect(() => {
     getstudentcourselist();
+    rejectedSubmissions();
   }, []);
   const selectedCourse = (selected, progress) => {
     dispatch(
@@ -43,11 +59,7 @@ function Home() {
     );
   };
   const selectedAssignmnet = (selected) => {
-    dispatch(
-      userassignment(
-         selected,
-      )
-    );
+    dispatch(userassignment(selected));
   };
   const [questions, setQuestions] = useState();
   const getQuestionList = async () => {
@@ -57,8 +69,8 @@ function Home() {
   useEffect(() => {
     getQuestionList();
   }, []);
-  console.log(courses)
- 
+  // console.log(courses);
+
   return (
     <div>
       <Header username={username ? username : ""} />
@@ -95,18 +107,42 @@ function Home() {
           Assignments
         </Link> */}
 
+      <div className="assignmentList">
+        {questions ? (
+          questions.map((question) => (
+            <Link
+              to="/assignmentsubmissionpage"
+              onClick={() => selectedAssignmnet(question.id)}
+              style={{ textDecoration: "none" }}
+              key={question.id}
+            >
+              <AssignmentCard number={question.number} />
+            </Link>
+          ))
+        ) : (
+          <SyncLoader />
+        )}
+      </div>
+      <div className="rejectedSubmisssions">
+        <h1 className="title center">
+          {rejectedSubmissions.length} Rejected Submissions
+        </h1>
         <div className="assignmentList">
-        {questions?questions.map((question)=>(
-          <Link to="/assignmentsubmissionpage" onClick={()=>
-            selectedAssignmnet(question.id)
-          } style={{ textDecoration: "none" }}
-          key={question.id}
-          >
-            <AssignmentCard number={question.number}/>
-          </Link>
-        )):
-        <SyncLoader/>
-      }
+          {RejectedAssignments ? (
+            RejectedAssignments.map((assignment) => (
+              <Link
+                to="/assignmentresubmissionpage"
+                onClick={() => selectedAssignmnet(assignment.Question)}
+                style={{ textDecoration: "none" }}
+                key={assignment.id}
+              >
+                <AssignmentCardRejected number={assignment.id} />
+              </Link>
+            ))
+          ) : (
+            <SyncLoader />
+          )}
+        </div>
       </div>
     </div>
   );

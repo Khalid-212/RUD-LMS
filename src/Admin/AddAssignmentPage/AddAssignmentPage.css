@@ -1,30 +1,54 @@
-.addQuestionForn{
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    border-radius: 10px;
-    width: 30rem;
-    height: 30rem;
-    justify-content: center;
-    align-items: center;
-    margin: 10vh auto;
-    color: #1e9fe9;
+.addQuestionForn {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius: 10px;
+  /* width: 30rem; */
+  height: 30rem;
+  justify-content: center;
+  align-items: center;
+  /* margin: 10vh auto; */
+  color: #1e9fe9;
+  flex: 1;
 }
-.addQuestionInput{
-    border-radius: 10px;
-    border: transparent;
-    padding: 0.5rem;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    width: 70%;
-    height: 10rem;
-    justify-content: space-around;
-    margin-bottom: 2rem;
-  }
-  .questionCardWrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
+.questionList {
+  flex: 1;
+}
+.addQuestionInput {
+  border-radius: 10px;
+  border: transparent;
+  padding: 0.5rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  width: 70%;
+  height: 10rem;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+.questionCardWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  /* height: 100%; */
+}
+.AddAssignmentPage {
+  display: flex;
+  /* margin: 10vh auto; */
+  margin: 5rem;
+}
+.p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #1e9fe9;
+  width: 60%;
+  color: #1e9fe9;
+  font-weight: 500;
+  font-size: large;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+}

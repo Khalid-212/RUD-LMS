@@ -3,6 +3,7 @@ import userReducer from "../userSlice";
 import assignmentReducer from "../assignmentSlice";
 import adminstatReducer from "../adminSlice";
 import courseReducer from "../courseSlice";
+import selectedRoutReducer from "../routSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
@@ -26,6 +27,7 @@ const reducer = combineReducers({
   adminstat: adminstatReducer,
   course: courseReducer,
   assignment: assignmentReducer,
+  selectedRout: selectedRoutReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
