@@ -20,3 +20,7 @@
   animation: ease-in-out;
   animation-duration: 100ms;
 }
+.active{
+  color: #1e9fe9;
+  font-weight: 800;
+}

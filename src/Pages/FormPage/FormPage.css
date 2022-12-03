@@ -7,11 +7,10 @@
   display: grid;
   place-items: center;
   background-color: rgb(246, 246, 246);
-  padding: 2rem;
+  padding: 5rem;
   border-radius: 20px;
 }
 .form_input {
-  justify-content: flex-end;
   padding: 0.2rem;
   box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
   width: 300px;
@@ -31,7 +30,7 @@
 .formWrapper {
   margin: 5px auto 0;
   text-align: center;
-  width: 35vw;
+  /* width: 35vw; */
 }
 .formTitle {
   justify-content: flex-end;
@@ -39,4 +38,33 @@
   color: #1e9fe9;
   font-size: 1.2rem;
   font-weight: 500;
+}
+
+@media screen and (max-width: 560px) {
+  .formpage {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+  .formpage > form {
+    background-color: rgb(246, 246, 246);
+    padding: 1rem;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .form_input {
+    justify-content: center;
+    /* padding: 0.2rem; */
+    box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+    width: 50vw;
+    height: 3rem;
+    margin: auto;
+    border: transparent;
+    box-shadow: 0 0 4px rgb(204, 204, 204);
+    border-radius: 2px 2px 0 0;
+    background-color: #f8f8f8;
+  }
 }

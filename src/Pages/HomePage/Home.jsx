@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import CourseCard from "../../Components/CourseCard/CourseCard";
 import Header from "../../Components/Header/Header";
 import "./Home.css";
 import {
+  fileUpload,
   getAssignments,
   getCourse,
   getCourseForStudent,
@@ -70,7 +71,20 @@ function Home() {
     getQuestionList();
   }, []);
   // console.log(courses);
+  const [selectedFile, setSelectedFile] = useState();
+  const [isFilePicked, setIsFilePicked] = useState(false);
+  const changeHandler = (event) => {
+    setSelectedFile(event.target.files[0]);
+    setIsFilePicked(true);
+  };
 
+  const handleSubmission = () => {
+    const formData = new FormData();
+    formData.append("File", selectedFile);
+    fileUpload(username, formData).then((data) => {
+      console.log(data);
+    });
+  };
   return (
     <div>
       <Header username={username ? username : ""} />
@@ -144,6 +158,25 @@ function Home() {
           )}
         </div>
       </div>
+      {/* <div className="fileUpload">
+        <input type="file" name="file" onChange={changeHandler} />
+        {isFilePicked ? (
+          <div>
+            <p>Filename: {selectedFile.name}</p>
+            <p>Filetype: {selectedFile.type}</p>
+            <p>Size in bytes: {selectedFile.size}</p>
+            <p>
+              lastModifiedDate:{" "}
+              {selectedFile.lastModifiedDate.toLocaleDateString()}
+            </p>
+          </div>
+        ) : (
+          <p>Select a file to show details</p>
+        )}
+        <div>
+          <button onClick={handleSubmission}>Submit</button>
+        </div>
+      </div> */}
     </div>
   );
 }

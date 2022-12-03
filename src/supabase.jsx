@@ -284,3 +284,16 @@ export async function allBuckets() {
   errorGuard(error);
   return data;
 }
+
+// file upload
+// const avatarFile = event.target.files[0]
+export function fileUpload(name,avatarFile) {
+  const { data, error } = supabase.storage
+    .from("profilepictures")
+    .upload(name, avatarFile, {
+      cacheControl: "3600",
+      upsert: false,
+    });
+  errorGuard(error);
+  return data;
+}

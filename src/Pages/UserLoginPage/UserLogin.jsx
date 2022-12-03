@@ -54,7 +54,7 @@ function UserLogin() {
       />
       <ToastContainer
         position="top-center"
-        autoClose={500}
+        autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

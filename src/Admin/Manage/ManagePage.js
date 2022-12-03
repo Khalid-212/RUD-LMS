@@ -31,7 +31,7 @@ function ManagePage() {
           style={{ textDecoration: "none" }}
           to="/admin/manage/manageAssignments"
         >
-          <div className="manageCard">Add Assignment</div>
+          <div className="manageCard">Add Question</div>
         </Link>
       </div>
     </>

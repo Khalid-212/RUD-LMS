@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { selectedRout } from "../../routSlice";
 import "./Tabs.css";
 
 function Tabs() {
+  const [active, setActive] = useState("home");
   const selectedTab = (selected) => {
-    const dispatch = useDispatch();
-    dispatch(selectedRout(selected));
+    localStorage.setItem("selectedTab", selected);
+    console.log(selected);
+    setActive(selected);
   };
+
+  // setActive(localStorage.getItem("selectedTab"));
+
   return (
     <div>
       <div className="tabsWrapper">
@@ -17,7 +22,7 @@ function Tabs() {
           onClick={() => selectedTab("StudentList")}
           style={{ textDecoration: "none" }}
         >
-          <div className="tabs">
+          <div className={active === "StudentList" ? "tabs active" : "tabs"}>
             <p>Student List</p>
           </div>
         </Link>
@@ -26,7 +31,7 @@ function Tabs() {
           onClick={() => selectedTab("Manage")}
           style={{ textDecoration: "none" }}
         >
-          <div className="tabs">
+          <div className={active === "Manage" ? "tabs active" : "tabs"}>
             <p>Manage</p>
           </div>
         </Link>
@@ -35,16 +40,18 @@ function Tabs() {
           onClick={() => selectedTab("Reports")}
           style={{ textDecoration: "none" }}
         >
-          <div className="tabs">
+          <div className={active === "Reports" ? "tabs active" : "tabs"}>
             <p>Rebaniya Reports</p>
           </div>
         </Link>
         <Link
           to="/admin/Assignmentreport"
-          onClick={() => selectedTab("AssignmentReport")}
+          onClick={() => setActive("AssignmentReport")}
           style={{ textDecoration: "none" }}
         >
-          <div className="tabs">
+          <div
+            className={active === "AssignmentReport" ? "tabs active" : "tabs"}
+          >
             <p>Assignment Report</p>
           </div>
         </Link>

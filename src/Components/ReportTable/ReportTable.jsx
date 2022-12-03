@@ -43,7 +43,7 @@ function ReportTable({ title, property }) {
   console.log(totalNumberOfSubmissions);
   const totalScore =
     (sevenDays + sixDays + fourDays + twoDays + zeroDays) /
-    totalNumberOfSubmissions;
+    100;
 
   return (
     <div className="reportTable">

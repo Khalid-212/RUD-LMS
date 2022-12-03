@@ -12,7 +12,9 @@ function AssignmentReportCardStudent({ name, val }) {
   };
   return (
     <div>
-      <Link to="/admin/manage/evaluation">
+      <Link to="/admin/manage/evaluation"
+      style={{ textDecoration: "none" }}
+      >
         <div
           className="AssignmentReportCardStudent"
           onClick={() => cardclick({ val })}

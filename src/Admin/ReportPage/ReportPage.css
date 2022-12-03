@@ -2,12 +2,33 @@
   display: flex;
   flex-wrap: wrap;
   width: 70%;
-  gap: 4rem;
-  /* border: 1px solid brown; */
+  gap: 3rem;
   padding: 1rem;
-  margin: auto;
+  height: max-content;
+}
+.SubmissionList {
+  display: flex;
+  padding: 1rem;
+  width: 30rem;
+  color: #1e9fe9;
+  /* box-shadow: 0px 2px 10px #e9e8e8c0; */
+  height: 100vh;
+  overflow: scroll;
+  align-items: center;
+}
+.SubmissionList > p {
+  position: absolute;
+  margin-top: -2rem;
+}
+.SubmissionList > div {
+  font-size: 1.5rem;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
+}
+.SubmissionList > div > * {
+  width: 80%;
 }
 .totalRewatibSubmissions {
   display: flex;
@@ -49,11 +70,18 @@
   background-color: white;
   border-radius: 5px;
   margin: 1rem auto;
-  align-items: center;
   cursor: pointer;
+  align-items: center;
   justify-content: center;
 }
 .PrintButton:active {
   box-shadow: 0 1px 5px #666;
   transform: translatex(1px);
+}
+.ReportPage {
+  display: flex;
+}
+.SubmissionList {
+  display: flex;
+  flex-direction: column;
 }
