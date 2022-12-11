@@ -46,7 +46,7 @@ function EvaluationPage() {
   const RewatibData = async () => {
     await getRewatiDataByDateAndStudentId(selectedDate, studentId).then(
       (data) => {
-        console.log(data);
+        // console.log(data);
         setrewatib(data);
       }
     );
@@ -59,15 +59,34 @@ function EvaluationPage() {
   const witr = rewatib.map((rewatib) => rewatib.witr).toString();
   const Azkar = rewatib.map((rewatib) => rewatib.Azkar).toString();
 
-  if (tilawa === "5-6 days") {
-    console.log("70%");
-  } else if (tilawa === "3-4 days") {
-    console.log("50%");
-  } else if (tilawa === "1-2 days") {
-    console.log("30%");
-  } else if (tilawa === "0 days") {
-    console.log("0%");
-  }
+  const percentage = (prop) => {
+    if (prop === "7 days") {
+      return 100;
+    } else if (prop === "5-6 days") {
+      return 80;
+    } else if (prop === "3-4 days") {
+      return 50;
+    } else if (prop === "1-2 days") {
+      return 30;
+    } else if (prop === "0 days") {
+      return 0;
+    } else {
+      return 0;
+    }
+  };
+  // total percentage of tilawa+selat+fasting+sunnahselat+witr+azkar
+  const [totalPercentage1, setTotalPercentage1] = useState([]);
+  const totalPercentage = () => {
+    setTotalPercentage1(
+      (percentage(tilawa) +
+        percentage(Selat) +
+        percentage(fasting) +
+        percentage(SunnahSelat) +
+        percentage(witr) +
+        percentage(Azkar)) /
+        6
+    );
+  };
 
   useEffect(() => {
     getQuestion();
@@ -75,6 +94,10 @@ function EvaluationPage() {
   useEffect(() => {
     RewatibData();
   }, [selectedDate]);
+  useEffect(() => {
+    totalPercentage();
+  }, [rewatib]);
+  // console.log(totalPercentage1);
 
   const clicked = async (id, correct, student) => {
     await updateCorrectAnswer(id, correct, student);
@@ -89,8 +112,6 @@ function EvaluationPage() {
       setPage("assignmentPage");
     }
   };
-
-  // console.log(rewatib);
   return (
     <div>
       <HeaderAdmin />
@@ -116,6 +137,9 @@ function EvaluationPage() {
         </div>
       </div> */}
 
+      <div className="studentName">
+        <div>{student.firstName + " " + student.lastName}</div>
+      </div>
       <div className="evaluationPageTabs">
         <div onClick={() => ActivePage("rewatibPage")}>Rewatib</div>
         <div onClick={() => ActivePage("assignmentPage")}>Assignment</div>
@@ -183,12 +207,40 @@ function EvaluationPage() {
         <div>
           <div>
             <div className="studentReport">
-              <div>{"tilawa " + tilawa}</div>
-              <div>{"Selat " + Selat}</div>
-              <div>{"fasting " + fasting}</div>
-              <div>{"SunnahSelat " + SunnahSelat}</div>
-              <div>{"witr " + witr}</div>
-              <div>{"Azkar " + Azkar}</div>
+              <div className="flex">
+                <div className="tableItem">Selat In Jema'a</div>
+                <div className="percentage">
+                  {Selat + percentage(Selat) + "%"}
+                </div>
+              </div>
+              <div className="flex">
+                <div className="tableItem">fasting</div>
+                <div className="percentage">
+                  {fasting + percentage(fasting) + "%"}
+                </div>
+              </div>
+              <div className="flex">
+                <div className="tableItem">Sunnah Selat</div>
+                <div className="percentage">
+                  {SunnahSelat + percentage(SunnahSelat) + "%"}
+                </div>
+              </div>
+              <div className="flex">
+                <div className="tableItem">witr</div>
+                <div className="percentage">{witr + percentage(witr) + "%"}</div>
+              </div>
+              <div className="flex">
+                <div className="tableItem">Azkar</div>
+                <div className="percentage">{Azkar + percentage(Azkar) + "%"}</div>
+              </div>
+              <div className="flex">
+                <div className="tableItem">tilawa</div>
+                <div className="percentage">{tilawa + percentage(tilawa) + "%"}</div>
+              </div>
+              <div className="total">
+                <div>total</div>
+                <div>{totalPercentage1 + "%"}</div>
+              </div>
             </div>
           </div>
         </div>

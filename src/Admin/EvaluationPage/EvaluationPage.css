@@ -124,10 +124,57 @@
   border-bottom: 1px solid gainsboro;
 }
 
-.studentReport{
+.studentReport {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  /* border: 1px solid gainsboro; */
+  width: 20%;
+}
+.studentName {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e9fe9;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tableItem{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  /* border: 1px solid gainsboro; */
+  border-radius: 10px;
+  color: #1e9fe9;
+  flex: 1;
+}
+.percentage{
+  flex: .8;
+  color: #1e9fe9!important;
+}
+
+.total{
+  display: flex;
+  font-size: larger;
+  font-weight: 500;
+  color: #1e9fe9;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2rem;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  width: 20%;
 }
