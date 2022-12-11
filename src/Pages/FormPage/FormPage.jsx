@@ -6,16 +6,23 @@ import { submitRebaniyaform } from "../../supabase";
 import "./FormPage.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 function FormPage() {
   const studentId = JSON.parse(
     JSON.stringify(useSelector((state) => state.user).user.id)
   );
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     // formState: { errors },
   } = useForm();
+  const date = new Date();
+  const today = `${date.getUTCFullYear()}-${
+    date.getUTCMonth() + 1
+  }-${date.getUTCDate()}`;
+  console.log(today);
   const onSubmit = async (data) => {
     // console.log(data);
     // console.log(errors);
@@ -26,14 +33,20 @@ function FormPage() {
       rewatib: data.rewatib,
       tilawa: data.tilawa,
       studentId: studentId,
-      datesubmitted: data.date,
+      datesubmitted: today,
       fasting: data.fasting,
       SunnahSelat: data.Sunnah_Selat,
       Azkar: data.Azkar,
     });
     toast.success("Form Submitted");
+    setTimeout(() => {
+      navigate("/");
+    }, 800);
+    // console.log(data.date);
   };
-
+  console.log(date.getUTCMonth() + 1);
+  console.log(date.getUTCDate());
+  console.log(date.getUTCFullYear());
   return (
     <>
       <Header />
@@ -104,7 +117,11 @@ function FormPage() {
           </div>
           <div className="formWrapper">
             <p className="formTitle">Sunnah Selat</p>
-            <select className="form_input" required {...register("Sunnah_Selat")}>
+            <select
+              className="form_input"
+              required
+              {...register("Sunnah_Selat")}
+            >
               <option value="0 days">0 days</option>
               <option value="1-2 days">1-2 days</option>
               <option value="3-4 days">3-4 days</option>
@@ -113,13 +130,13 @@ function FormPage() {
             </select>
           </div>
           <div className="formWrapper">
-            <p className="formTitle">Date</p>
+            {/* <p className="formTitle">Date</p>
             <input
               type="date"
               className="form_input"
               required
               {...register("date")}
-            />
+            /> */}
           </div>
           <input className="submit_btn" type="submit" />
         </form>
