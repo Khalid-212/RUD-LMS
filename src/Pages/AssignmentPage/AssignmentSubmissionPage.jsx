@@ -50,7 +50,6 @@ function AssignmentSubmissionPage() {
     getQuestion();
     getStudentName();
   }, []);
-  console.log(StudentName);
 
   return (
     <div>

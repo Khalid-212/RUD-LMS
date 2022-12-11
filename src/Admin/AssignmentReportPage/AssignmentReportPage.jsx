@@ -28,18 +28,18 @@ function AssignmentReportPage() {
     questionsList();
   }, []);
 
-  console.log(studentList);
+  // console.log(studentList);
 
   const [loadingList, setLoadingList] = useState(false);
   const getStudent = async (questionId) => {
     setLoadingList(true);
     await getStudentByQuestionId(questionId)
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setStudentList(data);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         setStudentList([]);
       })
       .finally(() => setLoadingList(false));

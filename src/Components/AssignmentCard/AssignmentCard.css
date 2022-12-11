@@ -12,9 +12,6 @@
 .assignmentCardRejected {
 }
 .assignmentCardItemsRejected {
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
   background-color: #e91e1e;
   border: 3px solid #e91e1e;
   width: fit-content;
@@ -38,4 +35,12 @@
   color: #1ee93d;
   font-size: 2rem;
   padding-left: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .assignmentCardItems {
+    width: 100%;
+    height: 2rem;
+    margin-left: 0;
+  }
 }

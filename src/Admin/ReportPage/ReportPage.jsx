@@ -38,7 +38,7 @@ function ReportPage() {
   const witr = rewatib.map((rewatib) => rewatib.witr);
   const Azkar = rewatib.map((rewatib) => rewatib.Azkar);
 
-  console.log(rewatib);
+  // console.log(rewatib);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const total = rewatib.length;
@@ -48,7 +48,7 @@ function ReportPage() {
   const studentlistData = async () => {
     rewatib.map((rewatib) => {
       getStudentById(rewatib.studentId).then((student) => {
-        console.log(student.firstName);
+        // console.log(student.firstName);
         setstudentlist((studentlist) => [
           ...studentlist,
           student.firstName + " " + student.lastName,
@@ -62,11 +62,12 @@ function ReportPage() {
     dispatch(totalSubmissions(total));
     studentlistData();
   }, [rewatib.length]);
-  console.log(studentlist);
+  // console.log(studentlist);
 
   useEffect(() => {
     rewatibData();
   }, [selectedDate]);
+  const submissionTotal = rewatib.length;
 
   return (
     <div>
@@ -75,7 +76,7 @@ function ReportPage() {
       <div className="ReportPageheader">
         <div className="totalRewatibSubmissions">
           {" "}
-          Total Number of submissions {rewatib.length}
+          Total Number of submissions {submissionTotal}
         </div>
         <div>
           <span>pick a date</span>
@@ -107,9 +108,7 @@ function ReportPage() {
             ? studentlist.map((student) => (
                 <div>
                   {studentlist.indexOf(student) + 1} :
-                  <AssignmentReportCardStudent
-                    name={student}
-                  />
+                  <AssignmentReportCardStudent name={student} />
                 </div>
               ))
             : "loading"}

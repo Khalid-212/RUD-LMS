@@ -121,24 +121,8 @@ function Home() {
           Assignments
         </Link> */}
 
-      <div className="assignmentList">
-        {questions ? (
-          questions.map((question) => (
-            <Link
-              to="/assignmentsubmissionpage"
-              onClick={() => selectedAssignmnet(question.id)}
-              style={{ textDecoration: "none" }}
-              key={question.id}
-            >
-              <AssignmentCard number={question.number} />
-            </Link>
-          ))
-        ) : (
-          <SyncLoader />
-        )}
-      </div>
       <div className="rejectedSubmisssions">
-        <h1 className="title center">
+        <h1 className="rejected_submission">
           {rejectedSubmissions.length} Rejected Submissions
         </h1>
         <div className="assignmentList">
@@ -157,6 +141,22 @@ function Home() {
             <SyncLoader />
           )}
         </div>
+      </div>
+      <div className="assignmentList">
+        {questions ? (
+          questions.map((question) => (
+            <Link
+              to="/assignmentsubmissionpage"
+              onClick={() => selectedAssignmnet(question.id)}
+              style={{ textDecoration: "none" }}
+              key={question.id}
+            >
+              <AssignmentCard number={question.number} />
+            </Link>
+          ))
+        ) : (
+          <SyncLoader />
+        )}
       </div>
       {/* <div className="fileUpload">
         <input type="file" name="file" onChange={changeHandler} />

@@ -21,12 +21,12 @@ function ManagePage() {
         >
           <div className="manageCard">Manage Students</div>
         </Link>
-        <Link
+        {/* <Link
           style={{ textDecoration: "none" }}
           to="/admin/manage/managecourses"
         >
           <div className="manageCard">Manage courses</div>
-        </Link>
+        </Link> */}
         <Link
           style={{ textDecoration: "none" }}
           to="/admin/manage/manageAssignments"

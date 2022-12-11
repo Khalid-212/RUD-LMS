@@ -31,7 +31,7 @@ function UserLogin() {
           })
         );
         // console.log(await addSession(logn.id));
-        console.log(logn.id);
+        // console.log(logn.id);
         navigate("/home");
       } else {
         toast.error("wrong credentials");

@@ -18,7 +18,7 @@
   text-align: center;
   /* margin: 30vw; */
 }
-.assignmentList{
+.assignmentList {
   display: flex;
   align-items: center;
   /* border: 1px solid black; */
@@ -26,4 +26,22 @@
   justify-content: center;
   margin: auto;
   flex-wrap: wrap;
+}
+.rejected_submission {
+  color: #1e9fe9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .assignmentList {
+    flex-direction: column;
+    margin: 2rem;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
