@@ -85,6 +85,16 @@ function Home() {
       console.log(data);
     });
   };
+  const notify = () => {
+    Notification.requestPermission().then((result) => {
+      console.log(result);
+      if (result === "granted") {
+        new Notification("Notification", {
+          body: "Your file has been uploaded",
+        });
+      }
+    });
+  };
   return (
     <div>
       <Header username={username ? username : ""} />
@@ -177,6 +187,7 @@ function Home() {
           <button onClick={handleSubmission}>Submit</button>
         </div>
       </div> */}
+      <button onClick={() => notify()}>notification</button>
     </div>
   );
 }
