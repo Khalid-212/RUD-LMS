@@ -9,7 +9,8 @@ function ReportTable({ title, property, p }) {
   const totalNumberOfSubmissions = useSelector(
     (state) => state.adminstat
   ).totalSubmissions;
-  console.log(totalNumberOfSubmissions);
+  // console.log(totalNumberOfSubmissions);
+  // console.log();
   const total =
     property.filter((el) => el === "0 days").length +
     property.filter((el) => el === "1-2 days").length +
@@ -30,7 +31,16 @@ function ReportTable({ title, property, p }) {
   const totalScore =
     (sevenDays + sixDays + fourDays + twoDays + zeroDays) /
     totalNumberOfSubmissions;
-  // console.log("ht"+p)
+
+  // console.log(totalScore);
+  // const [text, setText] = useState([]);
+
+  // useEffect(() => {
+  //   const div = document.querySelector("#my-div");
+  //   setText([...div.innerText]);
+  // }, []);
+
+  // console.log(text);
 
   return (
     <div className="reportTable">
@@ -101,7 +111,7 @@ function ReportTable({ title, property, p }) {
           %
         </div>
       </div>
-      <div>total: {totalScore.toFixed(2)}%</div>
+      <div id="my-div">total: {totalScore.toFixed(2)}%</div>
     </div>
   );
 }

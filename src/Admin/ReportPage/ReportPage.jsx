@@ -21,11 +21,19 @@ function ReportPage() {
   const today = new Date();
   const date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-  const [selectedDate, setSelectedDate] = useState(date);
+  const [tempdate, settempdate] = useState("");
+  const [selectedDate, setSelectedDate] = useState(
+    tempdate.replace(/(^|-)0+/g, "$1")
+  );
+
+  // use .replace to remove leading zero from month and day
+  // const [selectedDate, setSelectedDate] = useState(tempdate);
 
   const [rewatib, setrewatib] = useState([]);
   const rewatibData = async () => {
-    const rewatib = await getRewatiDataByDate(selectedDate);
+    const rewatib = await getRewatiDataByDate(
+      selectedDate.replace(/(^|-)0+/g, "$1")
+    );
     setrewatib(rewatib);
   };
 
@@ -38,7 +46,9 @@ function ReportPage() {
   const witr = rewatib.map((rewatib) => rewatib.witr);
   const Azkar = rewatib.map((rewatib) => rewatib.Azkar);
 
-  // console.log(rewatib);
+  // console.log(Selat);
+
+  console.log(rewatib);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const total = rewatib.length;
@@ -62,13 +72,16 @@ function ReportPage() {
     dispatch(totalSubmissions(total));
     studentlistData();
   }, [rewatib.length]);
-  // console.log(studentlist);
+  console.log(studentlist);
 
   useEffect(() => {
     rewatibData();
+    // setSelectedDate(tempdate.replace(/(^|-)0+/g, "$1"));
+    console.log("selected date" + selectedDate);
+    setstudentlist([]);
   }, [selectedDate]);
+  // console.log(rewatib);
   const submissionTotal = rewatib.length;
-
   return (
     <div>
       <HeaderAdmin username={adminusername} />
@@ -86,9 +99,9 @@ function ReportPage() {
             name=""
             id=""
             value={selectedDate}
+            // get the date from the date picker
             onChange={(e) => {
               setSelectedDate(e.target.value);
-              setstudentlist([]);
             }}
           />
         </div>
@@ -114,9 +127,9 @@ function ReportPage() {
             : "loading"}
         </div>
       </div>
-      <button onClick={() => {}} className="PrintButton">
+      {/* <button onClick={() => {}} className="PrintButton">
         Print Page
-      </button>
+      </button> */}
     </div>
   );
 }

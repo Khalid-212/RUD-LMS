@@ -174,6 +174,7 @@ export async function getRewatiDataByDate(dateSubmitted) {
   errorGuard(error);
   return data;
 }
+
 // get students from course
 
 export async function getRewatiDataByDateAndStudentId(
@@ -287,9 +288,9 @@ export async function allBuckets() {
 
 // file upload
 // const avatarFile = event.target.files[0]
-export function fileUpload(name,avatarFile) {
+export function fileUpload(name, avatarFile) {
   const { data, error } = supabase.storage
-    .from("profilepictures")
+    .from("files")
     .upload(name, avatarFile, {
       cacheControl: "3600",
       upsert: false,

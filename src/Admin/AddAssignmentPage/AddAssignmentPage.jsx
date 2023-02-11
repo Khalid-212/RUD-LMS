@@ -48,7 +48,7 @@ function AddAssignmentPage() {
           <input className="submit_btn" type="submit" />
         </form>
         <div className="questionList">
-        <div className="center p">Previous Questions</div>
+          <div className="center p">Previous Questions</div>
           {questions
             ? questions.map((question) => (
                 <QuestionCard

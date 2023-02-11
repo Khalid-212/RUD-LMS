@@ -99,6 +99,8 @@ function EvaluationPage() {
   }, [rewatib]);
   // console.log(totalPercentage1);
 
+  // console.log(selectedDate);
+
   const clicked = async (id, correct, student) => {
     await updateCorrectAnswer(id, correct, student);
   };
@@ -227,15 +229,21 @@ function EvaluationPage() {
               </div>
               <div className="flex">
                 <div className="tableItem">witr</div>
-                <div className="percentage">{witr + percentage(witr) + "%"}</div>
+                <div className="percentage">
+                  {witr + percentage(witr) + "%"}
+                </div>
               </div>
               <div className="flex">
                 <div className="tableItem">Azkar</div>
-                <div className="percentage">{Azkar + percentage(Azkar) + "%"}</div>
+                <div className="percentage">
+                  {Azkar + percentage(Azkar) + "%"}
+                </div>
               </div>
               <div className="flex">
                 <div className="tableItem">tilawa</div>
-                <div className="percentage">{tilawa + percentage(tilawa) + "%"}</div>
+                <div className="percentage">
+                  {tilawa + percentage(tilawa) + "%"}
+                </div>
               </div>
               <div className="total">
                 <div>total</div>

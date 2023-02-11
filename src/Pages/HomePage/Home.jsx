@@ -17,6 +17,7 @@ import { SyncLoader, BarLoader } from "react-spinners";
 import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
 import { userassignment } from "../../assignmentSlice";
 import AssignmentCardRejected from "../../Components/AssignmentCard/AssignmentCardRejected";
+import FileUploader from "../../Components/FileUpload/FileUpload";
 
 function Home() {
   const username = JSON.parse(
@@ -81,9 +82,7 @@ function Home() {
   const handleSubmission = () => {
     const formData = new FormData();
     formData.append("File", selectedFile);
-    fileUpload(username, formData).then((data) => {
-      console.log(data);
-    });
+    fileUpload(username, formData);
   };
   const notify = () => {
     Notification.requestPermission().then((result) => {
@@ -168,7 +167,13 @@ function Home() {
           <SyncLoader />
         )}
       </div>
-      {/* <div className="fileUpload">
+
+      {/* file upload  */}
+
+      {/* <FileUploader />
+      <br />
+      <br />
+      <div className="fileUpload">
         <input type="file" name="file" onChange={changeHandler} />
         {isFilePicked ? (
           <div>
@@ -187,7 +192,8 @@ function Home() {
           <button onClick={handleSubmission}>Submit</button>
         </div>
       </div> */}
-      <button onClick={() => notify()}>notification</button>
+      {/* file upload */}
+      {/* <button onClick={() => notify()}>notification</button> */}
     </div>
   );
 }
