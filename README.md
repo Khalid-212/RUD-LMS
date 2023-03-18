@@ -1,46 +1,37 @@
-# Getting Started with Create React App and Redux
+![enter image description here](https://rud-lms.web.app/favicon.png)
+# Welcome to Ruwad LMS(Learning management system)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+Hi i am khalid ibrahim (AKA owner of the project) i have created this system to improve
+the process of handling **assignment submission** and  **tracking rewatib**.
 
-## Available Scripts
+More to come...
 
-In the project directory, you can run:
+# The Tech stack
 
-### `npm start`
+The project is made using [react.js](https://reactjs.org/) pure CRA(create-react-app) for the frontend as well as [redux](https://redux.js.org/)  for state management and for the backend [Supabase](https://supabase.com/)❤️ for the database which is a database as a service that is built on  [Postgres](PostgreSQL:%20The%20world%27s%20most%20advanced%20open%20source%20database%20%20PostgreSQL%20https://www.postgresql.org).
+there are also some libraries that are used along the way which i don’t remember but a simple **npm install** will do.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Folder structure
+The folders are structured i a simple way, you have the admin folder which contain the admin pages and the other files and folders are all in the main src folder.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Admin Folder** contains all the admin routs as a folder every rout have their own folder with their own jsx(yes i use .jsx😊) and css files.
 
-### `npm test`
+**Pages folder** the user routs are located in the pages folder which also have their own folder with their own jsx and css files.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Components Folder** is the components folder which contains all the reusable components in the project
 
-### `npm run build`
+**App Folder** contains the store.js file which is the [redux](https://redux.js.org/) store used for state management
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**supabase.js** is a file with all the functions you will be using to perform and CRUD opration on the database.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Running the project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+clone the project using the command `git clone https://github.com/Khalid-212/RUD-LMS.git` or download the project and open it using the editor of your choice then run the command `npm install` to install all the dependencies and packages 📦 .
 
-### `npm run eject`
+then use the `npm start` command to run the node server which will open the app using your default browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+then create a branch using the git command git `branch [your branch name]` then switch to that branch using the command `git checkout [the branch name]`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Then start building 👨‍💻 ...
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+after you are done create a pull request and i will be reviewing the code and if you are lucky your request might be merged to **main** 🤣.
