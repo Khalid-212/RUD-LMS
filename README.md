@@ -22,6 +22,8 @@ The folders are structured i a simple way, you have the admin folder which conta
 
 **App Folder** contains the store.js file which is the [redux](https://redux.js.org/) store used for state management
 
+**Files in the src folder** are all redux related files mainly slice files.
+
 **supabase.js** is a file with all the functions you will be using to perform and CRUD opration on the database.
 
 ## Running the project
